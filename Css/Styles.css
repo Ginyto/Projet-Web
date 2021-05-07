@@ -1,3 +1,17 @@
 *{
     background-color: #282A36;
+    display: flexbox;
+}
+
+.flashcard{
+    display: flex;
+    align-items: center;
+    
+    
+
+}
+
+.face{
+    color: #F8F8F2;
+    
 }
