@@ -1,11 +1,21 @@
 *{
     background-color: #282A36;
-    display: flexbox;
+}
+
+#flexzone{
+    display: flex;
+    margin: 0 auto;
+    background-color: #8087F9;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    
+
+
 }
 
 .flashcard{
     display: flex;
-    align-items: center;
     
     
 
@@ -13,5 +23,6 @@
 
 .face{
     color: #F8F8F2;
+    background-color: #8087F9;
     
 }
