@@ -4,27 +4,20 @@
  * @param verso face verso de la carte
  */
 class Flashcards {
-	constructor(recto, verso, lvl, ) {
+	constructor(recto, verso, lvl, correct) {
 		this.recto = recto;
 		this.verso = verso;
-		this.lvl = lvl;
-    }
-    
-    getLvl() {
-        return this.niveaux;
+        this.lvl = lvl;
+        this.correct = correct
     }
 
+    setCorrect(correct) {
+        this.correct = correct
+    }
+    
     setLvl(lvl) {
         this.lvl = lvl;
     }
-
-	getRecto() {
-		return this.recto;
-	}
-
-	getVerso() {
-		return this.verso;
-	}
 
 	setRecto(recto) {
 		this.recto = recto;
@@ -36,12 +29,26 @@ class Flashcards {
 
 	fliprecto() {
 		this.recto.hidden = true;
-		this.verso.hidden = false;
+        this.verso.hidden = false;
+        console.log("coucou");
 	}
 
 	flipverso() {
 		this.verso.hidden = true;
 		this.recto.hidden = false;
-	}
+    }
+    
+    test() {
+        console.log("OUIIIIIIIIII");
+    }
 }
+
+var carte = new Flashcards("rien", "rien", 0, false);
+
+var texte = document.getElementById("recto");
+
+
+console.log(carte.recto);
+console.log(carte.verso);
+console.log(texte);
 
