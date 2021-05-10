@@ -14,27 +14,29 @@
 
     </head>
 
+    <header class="ciel">
+        <h1 class="titre">Flashcardo</h1>
+    </header>
+
     <body>
 
-        <div class="flexzone">
+        <div id="flexzone">
 
-            <header class="ciel">
-                <h1 class="titre">Flashcardo</h1>
-            </header>
-
-            <main class="principal">
-                <div class="flashcard" id="1">
-                    <div class="face" id="recto" onclick="carte.test()">Gianlucca</div>
-                    <div class="face" id="verso">Annichiarico</div>
+                <div class="face" id="recto">
+                    <input type="text" class="contenue">
                 </div>
-            </main>
 
-            <footer class="terre">
-                <p class="pied">Je suis un pied de page</p>
-            </footer>
+                <script>
+                    recto.hidden = true;
+                </script>
+
+                <div class="face" id="verso">
+                    <input type="text" class="contenue">
+                </div>
 
         </div>
 
     </body>
+
 
 </html>

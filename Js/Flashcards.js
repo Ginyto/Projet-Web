@@ -37,18 +37,5 @@ class Flashcards {
 		this.verso.hidden = true;
 		this.recto.hidden = false;
     }
-    
-    test() {
-        console.log("OUIIIIIIIIII");
-    }
 }
-
-var carte = new Flashcards("rien", "rien", 0, false);
-
-var texte = document.getElementById("recto");
-
-
-console.log(carte.recto);
-console.log(carte.verso);
-console.log(texte);
-
+var utilitab = document.getElementById("recto");
