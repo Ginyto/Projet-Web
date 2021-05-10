@@ -5,8 +5,12 @@
  */
 class Flashcards {
 	constructor(recto, verso, lvl, correct) {
-		this.recto = recto;
-		this.verso = verso;
+		this.recto = document.getElementById(recto);
+        this.verso = document.getElementById(verso);
+
+        this.crecto = recto.innerText;
+        this.cverso = verso.innerText;
+        
         this.lvl = lvl;
         this.correct = correct
     }
@@ -20,17 +24,16 @@ class Flashcards {
     }
 
 	setRecto(recto) {
-		this.recto = recto;
+		this.crecto = recto;
 	}
 
 	setVerso(verso) {
-		this.recto = verso;
+		this.crecto = verso;
 	}
 
 	fliprecto() {
 		this.recto.hidden = true;
         this.verso.hidden = false;
-        console.log("coucou");
 	}
 
 	flipverso() {
@@ -38,4 +41,19 @@ class Flashcards {
 		this.recto.hidden = false;
     }
 }
-var utilitab = document.getElementById("recto");
+
+var carte = new Flashcards("rectocontenue", "versocontenue", 0, true);
+
+carte.setRecto("heho");
+
+if (carte.crecto != "") {
+    console.log(carte.crecto);
+}
+
+
+//carte.fliprecto();
+//carte.flipverso();
+
+
+
+
