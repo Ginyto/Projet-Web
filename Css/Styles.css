@@ -1,15 +1,6 @@
 *{
-    background-color: #282A36;
     padding: 0;
     margin: 0;
-}
-
-#flexzone{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    
 }
 
 .titre{
@@ -17,26 +8,59 @@
     text-align: center;
 }
 
-
-.pied{
-    color: #FF79C6;
-    text-align: center;
-}
-
-.face{
-    color: #F8F8F2;
-    background-color: #282A36;
-    height: 500px;
-    width: 300px;
-    border: #FF79C6 solid 3px;
+.flexzone{
+    display: flex;
+    position: absolute;
+    height: 100%;
+    width: 100%;
     justify-content: center;
+    align-items: center;
 }
 
-.contenue{
-    background-color: #282A36;
-    color: #F8F8F2;
-    width: 300px;
+.card{
+    position: relative;
+    width: 500px;
     height: 500px;
-    border: none;
+
+    
 }
+
+.flashcard{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: all 0.5s ease;
+}
+
+.flashcard:hover{
+    transform: rotateY(180deg);
+}
+
+#recto{
+    position: absolute;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    background-color: #FF79C6;
+    color: black;
+    justify-content: center;
+    align-items: center;
+}
+
+#verso{
+    position: absolute;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    background-color:coral;
+    color: black;
+    transform: rotateY(180deg);
+    justify-content: center;
+    align-items: center;
+}
+
+
 
