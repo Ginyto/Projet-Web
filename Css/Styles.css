@@ -1,11 +1,14 @@
 *{
     padding: 0;
     margin: 0;
+    background-color:#282A36;
 }
 
 .titre{
     color: #FF79C6;
     text-align: center;
+    border: #FF79C6 solid 1px;
+
 }
 
 .flexzone{
@@ -17,12 +20,12 @@
     align-items: center;
 }
 
-.card{
+.flashcard_zone{
+    display: flex;
     position: relative;
-    width: 500px;
+    width: 300px;
     height: 500px;
-
-    
+    flex-direction: column;
 }
 
 .flashcard{
@@ -42,6 +45,7 @@
     display: flex;
     width: 100%;
     height: 100%;
+    border-radius: 3%;
     backface-visibility: hidden;
     background-color: #FF79C6;
     color: black;
@@ -54,12 +58,23 @@
     display: flex;
     width: 100%;
     height: 100%;
+    border-radius: 3%;
     backface-visibility: hidden;
     background-color:coral;
     color: black;
     transform: rotateY(180deg);
     justify-content: center;
     align-items: center;
+}
+
+.bouton_zone{
+    display: flex;
+    background-color: yellow;
+    justify-content: space-around;
+}
+
+.boutons{
+    background-color: yellow;
 }
 
 
