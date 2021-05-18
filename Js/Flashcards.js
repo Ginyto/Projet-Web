@@ -16,6 +16,34 @@ class Flashcards {
     }
 }
 
+function test() {
+    console.log("test");
+}
+
+function affichage() {
+    const carte = document.querySelector('.flashcard');
+    carte.style.display = 'block';
+    console.log("show");
+}
+
+function flip() {
+    const flashcard = document.querySelector('.flashcard');
+    var flop = 0;
+
+    if (flop == 0) {
+        flashcard.style.transform = "rotateY(180deg)";
+        flop = 1;
+        console.log(flop);
+    }
+    if (flop == 1) {
+		flashcard.style.transform = "rotateY(-180deg)";
+        flop = 0;
+        console.log(flop);
+		}
+
+    console.log("Flip");
+}
+
 
 
 

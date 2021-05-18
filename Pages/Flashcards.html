@@ -23,7 +23,7 @@
 
             <div class="flashcard_zone">
             
-                <div class="flashcard">
+                <div class="flashcard" onclick="flip()">
                     <div class="face" id="recto">
                         recto
                     </div>
@@ -37,7 +37,7 @@
             </div>
 
             <div class="bouton_zone">
-                <button type="submit" class="boutons" id="bone">
+                <button type="submit" class="boutons" id="bone" onclick="test()">
                     A revoir
                 </button>
             
@@ -48,13 +48,21 @@
                 <button type="submit" class="boutons" id="bthree">
                     Parfait 
                 </button>
+
+                <button type="submit" class="boutons" id="bfour" onclick="affichage()">
+                    Afficher la prochaine carte
+                </button>
+
             </div>
 
         </div>
 
+    
+        <script src="/Js/Flashcards.js"></script>
+
     </body>
 
-    <script src="/Js/Flashcards.js"></script>
+    
 
 
 </html>

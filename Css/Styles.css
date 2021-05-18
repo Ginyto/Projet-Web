@@ -35,11 +35,10 @@
     height: 100%;
     transform-style: preserve-3d;
     transition: all 0.5s ease;
+    display: none;
 }
 
-.flashcard:hover{
-    transform: rotateY(180deg);
-}
+
 
 #recto{
     position: absolute;
@@ -73,10 +72,10 @@
     display: flex;
     width: 300px;
     height: 50px;
-    margin-top: 50px;
+    margin-top: 25px;
     justify-content: space-between;
+    flex-wrap: wrap;
     
-
 }
 
 .boutons{
@@ -86,13 +85,20 @@
     border-radius: 12%;
     border: #282A36 solid;
     width: fit-content auto;
-    background-color: yellow;
-    
+    background-color: coral;
+}
+
+#bfour{
+    display: flex;
+    margin-top: 15px;
+    width: 300px;
+    justify-content: center;
 }
 
 .boutons:hover{
-    background-color: #FF79C6;
+    border: #FF79C6 solid;
     transition: all 0.5s;
+    transform: scale(1.3);
 }
 
 
