@@ -2,6 +2,7 @@
     padding: 0;
     margin: 0;
     background-color:#282A36;
+    font-weight: bold;
 }
 
 .titre{
@@ -18,6 +19,7 @@
     width: 100%;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
 .flashcard_zone{
@@ -25,7 +27,6 @@
     position: relative;
     width: 300px;
     height: 500px;
-    flex-direction: column;
 }
 
 .flashcard{
@@ -67,14 +68,31 @@
     align-items: center;
 }
 
+
 .bouton_zone{
     display: flex;
-    background-color: yellow;
-    justify-content: space-around;
+    width: 300px;
+    height: 50px;
+    margin-top: 50px;
+    justify-content: space-between;
+    
+
 }
 
 .boutons{
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    border-radius: 12%;
+    border: #282A36 solid;
+    width: fit-content auto;
     background-color: yellow;
+    
+}
+
+.boutons:hover{
+    background-color: #FF79C6;
+    transition: all 0.5s;
 }
 
 
