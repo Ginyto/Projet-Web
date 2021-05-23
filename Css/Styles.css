@@ -78,7 +78,7 @@
     flex-wrap: wrap;    
 }
 
-.boutons{
+.boutons, #compteur{
     display: flex;
     align-items: center;
     padding: 20px;
@@ -95,10 +95,26 @@
     justify-content: center;
 }
 
-.boutons:hover{
+.boutons:hover, #compteur:hover{
     border: #FF79C6 solid;
     transition: all 0.5s;
     transform: scale(1.3);
+}
+
+.pdv{
+    background-color: red;
+    width: 300px;
+    height: 5px;
+    align-self: center;
+    border-radius: 6%;
+    border: green 3px solid;
+    margin-bottom: 25px;
+}
+
+#ko{
+    height: 5px;
+    background-color: green;
+    width: 100%;
 }
 
 
