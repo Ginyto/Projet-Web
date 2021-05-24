@@ -5,6 +5,7 @@ var count = 0;
 var combien = document.getElementById("compteur");
 var bdv = document.getElementById("ko");
 var heal = 100;
+var ecaflip;
 
 
 /**
@@ -21,22 +22,45 @@ class Flashcards {
     }
 }
 
+function hit() {
+    heal -= 2;
+	bdv.style.width = heal + "%";
+}
+
+function counter() {
+
+    count++;
+	combien.textContent = count;
+}
+
 function flip() {
     flashcard.style.transform = "rotateY(180deg)";
-    console.log("Flip");
-    heal -= 2;
-    bdv.style.width = heal + "%";
-    console.log(heal);
-    
+    ecaflip = true;
+    console.log(ecaflip);
 }
 
 function flop() {
-	flashcard.style.transform = "rotateY(0deg)";
-    console.log("Flop");
-    count++;
-    console.log(combien.textContent);
-    combien.textContent = count;
+    flashcard.style.transform = "rotateY(0deg)";
+    ecaflip = false;
+    console.log(ecaflip);
 }
+
+function echec() {
+    if (ecaflip == true) {
+        hit();
+		counter();
+		flop();
+    }
+}
+
+function succes() {
+	if (ecaflip == true) {
+		counter();
+		flop();
+	}
+}
+
+
 
 
 
