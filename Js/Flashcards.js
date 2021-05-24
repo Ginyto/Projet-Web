@@ -14,6 +14,7 @@ var terme = document.getElementById("terme");
 var def = document.getElementById("def");
 var deck = [];
 var num = document.getElementById("num");
+var deckname = document.getElementById("decknom");
 
 
 /**
@@ -21,12 +22,14 @@ var num = document.getElementById("num");
  * @param recto face verso de la carte
  * @param verso face verso de la carte
  * @param check correcte ou incorecte
+ * @param deck
  */
 class Flash {
-	constructor(recto, verso, check) {
+	constructor(recto, verso, check, deck) {
         this.recto = recto;
         this.verso = verso;
         this.check = check;
+        this.deck = deck;
     }
 }
 
@@ -69,7 +72,8 @@ function succes() {
 }
 
 function addcard() {
-    var carte = new Flash(terme.value, def.value, false);
+    var carte = new Flash(terme.value, def.value, false, deckname.value);
+    deckname.style =  "border: #282A36";
     terme.value = "";
     def.value = "";
     num.textContent = "No." + (deck.length+2);
