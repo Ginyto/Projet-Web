@@ -11,6 +11,9 @@ var fanny = true;
 const barre = document.querySelector(".bardevie");
 const zone_bouton = document.querySelector(".bouton_zone");
 
+var terme = document.getElementById("terme");
+var def = document.getElementById("def");
+
 
 /**
  * Classe Flashcards qui a pour paramètre recto et verso
@@ -18,7 +21,7 @@ const zone_bouton = document.querySelector(".bouton_zone");
  * @param verso face verso de la carte
  * @param check correcte ou incorecte
  */
-class Flashcards {
+class Flash {
 	constructor(recto, verso, check) {
         this.recto = recto;
         this.verso = verso;
@@ -64,12 +67,11 @@ function succes() {
 	}
 }
 
-function switchi() {
-    document.location.pathname = "/Pages/Addcarte.html";
-    console.log("switchi");
-
+function addcard() {
+    var carte = new Flash(terme.textContent, def.textContent, false);
+    console.log(terme.inputMode);
+    console.log("test");
 }
-
 
 
 
