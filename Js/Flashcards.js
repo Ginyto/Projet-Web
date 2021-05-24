@@ -72,7 +72,7 @@ function addcard() {
     var carte = new Flash(terme.value, def.value, false);
     terme.value = "";
     def.value = "";
-    num.textContent = "No." + (deck.length+1);
+    num.textContent = "No." + (deck.length+2);
     deck.push(carte);
 }
 
