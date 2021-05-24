@@ -1,4 +1,5 @@
 const flashcard = document.querySelector(".flashcard");
+const flashzone = document.querySelector(".flashcard_zone");
 var rface = document.getElementById("recto");
 var vface = document.getElementById("verso");
 var count = 0;
@@ -6,7 +7,9 @@ var combien = document.getElementById("compteur");
 var bdv = document.getElementById("ko");
 var heal = 100;
 var ecaflip;
-var barre = document.querySelector(".bardevie");
+var fanny = true;
+const barre = document.querySelector(".bardevie");
+const zone_bouton = document.querySelector(".bouton_zone");
 
 
 /**
@@ -61,9 +64,10 @@ function succes() {
 	}
 }
 
-function switchi(params) {
-    barre.style = "display: none";
+function switchi() {
+    document.location.pathname = "/Pages/Addcarte.html";
     console.log("switchi");
+
 }
 
 
