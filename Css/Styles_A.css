@@ -37,6 +37,12 @@
     color: coral;
 }
 
+#num{
+    text-align: start;
+    font-size: 25px;
+    margin-left: 5px;
+}
+
 .saisie{
     border: #282A36;
     border-bottom: coral solid 1px;

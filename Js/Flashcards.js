@@ -10,9 +10,10 @@ var ecaflip;
 var fanny = true;
 const barre = document.querySelector(".bardevie");
 const zone_bouton = document.querySelector(".bouton_zone");
-
 var terme = document.getElementById("terme");
 var def = document.getElementById("def");
+var deck = [];
+var num = document.getElementById("num");
 
 
 /**
@@ -68,9 +69,10 @@ function succes() {
 }
 
 function addcard() {
-    var carte = new Flash(terme.textContent, def.textContent, false);
-    console.log(terme.inputMode);
-    console.log("test");
+    var carte = new Flash(terme.value, def.value, false);
+    terme.value = "";
+    def.value = "";
+    deck.push(carte);
 }
 
 
