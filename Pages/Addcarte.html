@@ -8,13 +8,13 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Deck</title>
+    <title>Création de Deck</title>
     <link rel="stylesheet" href="/Css/Styles_A.css">
 
 </head>
 
 <header class="ciel">
-    <h1 class="titre">Deck</h1>
+    <h1 class="titre">Création de Deck</h1>
 </header>
 
 <body>
@@ -22,14 +22,31 @@
     <div class="flexzone">
 
         <div class="creadeck">
-            <input type="text" name="" id="">
-            <input type="text" name="" id="">
+            <h2 class="titulo">Terme</h2>
+            <input type="text" class="saisie" id="terme">
+            <h2 class="titulo">Définition</h2>
+            <input type="text" class="saisie" id="def">
         </div>
 
-        <div class="switch">
-            <button type="submit" class="boutons" onclick="document.location.pathname='/Pages/Flashcards.html'">
-                Switch
-            </button>
+        <div class="bouton_zone">
+            <div class="add">
+                <button type="submit" class="boutons">
+                    Ajouter
+                </button>
+            </div>
+
+            <div class="add">
+                <button type="submit" class="boutons">
+                    Supprimer
+                </button>
+            </div>
+
+            <div class="switch">
+                <button type="submit" class="boutons" onclick="document.location.pathname='/Pages/Flashcards.html'">
+                    Flashcardo
+                </button>
+            </div>
+
         </div>
 
     </div>
