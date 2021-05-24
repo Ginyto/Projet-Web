@@ -6,6 +6,7 @@ var combien = document.getElementById("compteur");
 var bdv = document.getElementById("ko");
 var heal = 100;
 var ecaflip;
+var barre = document.querySelector(".bardevie");
 
 
 /**
@@ -60,6 +61,10 @@ function succes() {
 	}
 }
 
+function switchi(params) {
+    barre.style = "display: none";
+    console.log("switchi");
+}
 
 
 
