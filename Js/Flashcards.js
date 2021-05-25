@@ -170,11 +170,11 @@ function selecdeck(x) {
 
 function splashscreen(x) {
     var secondeck = document.getElementById(x);
-	secondeck.children.item(1).textContent = sessionStorage.getItem("nom");
+	secondeck.children.item(0).textContent = sessionStorage.getItem("nom");
 	console.log(secondeck);
 }
 
-pages_gestio.onload = console.log("test");
+pages_gestio.onload = splashscreen(0);
 
 
 
