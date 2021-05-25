@@ -90,6 +90,7 @@ function nuevoclick(param,path) {
 
 
 function addcard() {
+    sessionStorage.removeItem("IsThisFirstTime_Log_From_LiveServer");
     var taille = memdeck.length;
     console.log(taille)
     var maindeck = document.getElementById(taille);
@@ -113,7 +114,7 @@ function creadeack() {
     var newdeck = document.createElement("div");
     console.log(memdeck.length);
     nuevo(newdeck, "maindeck", memdeck.length);
-    nuevoclick(newdeck,"document.location.pathname = '/Pages/Gestionnaire.html'");
+    nuevoclick(newdeck,"selecdeck("+memdeck.length+")");
     deckzone.appendChild(newdeck);
 
     var no = document.createElement("div");
@@ -132,12 +133,6 @@ function creadeack() {
     newdeck.appendChild(nomdeck);
     newdeck.appendChild(countdeck);
 
-    console.log(deck);
-    console.log(memdeck);
-    console.log(memdeck[0].length)
-
-
-
 }
 
 function resetcreadeck() {
@@ -151,10 +146,10 @@ function resetcreadeck() {
 }
 
 function download() {
-    console.log("init... world:"+world);
+    console.log("init... world:"+sessionStorage.length);
 
-    for (let x = 0; x < sessionStorage.length - 1; x++) {
-			if (x + 1 < sessionStorage.length - 1) {
+    for (let x = 0; x < sessionStorage.length; x++) {
+			if (x + 1 < sessionStorage.length && sessionStorage.getItem(x)) {
 				var carte = new Flash(
 					sessionStorage.getItem(x).split("/")[1],
 					sessionStorage.getItem(x).split("/")[2],
@@ -163,9 +158,15 @@ function download() {
 				);
 				console.log(carte);
 			}
-			console.log("x:" + x);
 		}
 }
+
+function selecdeck(x) {
+    var maindeck = document.getElementById(x);
+    sessionStorage.setItem("nom", maindeck.children.item(1).textContent);
+    
+}
+
 
 
 
