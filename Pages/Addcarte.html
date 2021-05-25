@@ -10,6 +10,8 @@
 
     <title>Création de Deck</title>
     <link rel="stylesheet" href="/Css/Styles_A.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 
 </head>
 
@@ -47,7 +49,7 @@
             </div>
 
             <div class="add">
-                <button type="submit" class="boutons">
+                <button type="submit" class="boutons" onclick="resetcreadeck()">
                     Fin de Deck
                 </button>
             </div>
@@ -60,8 +62,9 @@
 
         </div>
 
-        <div class="deck_zone">
-            <div class="maindeck" id="maindeck" value="1" onclick="document.location.pathname='/Pages/Gestionnaire.html'">
+        <div class="deck_zone" id="deckzone">
+            <div class="maindeck" id="0" onclick="document.location.pathname='/Pages/Gestionnaire.html'">
+                <div class="infodeck" id="no">No.1</div>
                 <div class="infodeck" id="nom">Nom du deck</div>
                 <div class="infodeck" id="nbr">Nombre de cartes</div>
             </div>

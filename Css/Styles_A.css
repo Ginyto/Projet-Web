@@ -3,6 +3,7 @@
     margin: 0;
     background-color:#282A36;
     font-weight: bold;
+    font-family: 'Roboto', sans-serif;
 }
 
 .ciel{
@@ -100,7 +101,9 @@
 .deck_zone{
     display: flex;
     justify-content: center;
-    margin-top: 30px;
+    margin-top: 100px;
+    flex-wrap: wrap;
+    height: fit-content;
 }
 
 .maindeck{
@@ -111,7 +114,8 @@
     background-color: #FF79C6;
     flex-direction: column;
     justify-content: space-around;
-    border-radius: 12%;
+    border-radius: 11%;
+    margin: 10px;
 }
 
 .maindeck:hover{

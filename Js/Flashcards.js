@@ -13,9 +13,11 @@ const zone_bouton = document.querySelector(".bouton_zone");
 var terme = document.getElementById("terme");
 var def = document.getElementById("def");
 var deck = [];
+var memdeck = [];
 var num = document.getElementById("num");
 var deckname = document.getElementById("decknom");
 var maindeck = document.getElementById("maindeck");
+var deckzone = document.getElementById("deckzone");
 
 
 /**
@@ -72,16 +74,88 @@ function succes() {
 	}
 }
 
+function nuevo(param, classref, idref) {
+    param.className = classref;
+    param.id = idref;
+}
+
+function nuevotext(param, text) {
+    param.textContent = text;
+}
+
+function nuevoclick(param,path) {
+    param.setAttribute("onclick",path);
+}
+
+
 function addcard() {
+    var taille = memdeck.length;
+    console.log(taille)
+    var maindeck = document.getElementById(taille);
     var carte = new Flash(terme.value, def.value, false, deckname.value);
+
     deckname.style = "border: #282A36";
-    maindeck.children.item(0).textContent = carte.deck;
+    maindeck.children.item(1).textContent = carte.deck;
     terme.value = "";
     def.value = "";
-    num.textContent = "No." + (deck.length + 2);
-    maindeck.children.item(1).textContent = deck.length + 1;
+    num.textContent = "No." + (deck.length+ 2);
+    maindeck.children.item(2).textContent = deck.length + 1;
     deck.push(carte);
 }
+
+function creadeack() {
+    memdeck.push(deck);
+    cloudeck();
+    deck = [];
+
+    var newdeck = document.createElement("div");
+    console.log(memdeck.length);
+    nuevo(newdeck, "maindeck", memdeck.length);
+    nuevoclick(newdeck,"document.location.pathname = '/Pages/Gestionnaire.html'");
+    deckzone.appendChild(newdeck);
+
+    var no = document.createElement("div");
+    var nomdeck = document.createElement("div");
+    var countdeck = document.createElement("div");
+
+    nuevo(no, "infodeck", "no");
+    nuevo(nomdeck, "infodeck", "nom");
+    nuevo(countdeck, "infodeck", "nbr");
+
+    nuevotext(no, "No." + (memdeck.length + 1));
+    nuevotext(nomdeck, "Nom du deck");
+    nuevotext(countdeck, "Nombres de cartes")
+
+    newdeck.appendChild(no);
+    newdeck.appendChild(nomdeck);
+    newdeck.appendChild(countdeck);
+
+    console.log(deck);
+    console.log(memdeck);
+    console.log(memdeck[0].length)
+
+}
+
+function resetcreadeck() {
+    deckname.style = "border-bottom: coral solid 1px;";
+    deckname.value = "";
+    terme.value = "";
+    def.value = "";
+    num.textContent = "No.1";
+    num = 0;
+    creadeack(1);
+}
+
+function cloudeck() {
+    sessionStorage.setItem(memdeck.length, deck.carte);
+
+}
+
+function test() {
+    console.log(memdeck);
+}
+
+
 
 
 
