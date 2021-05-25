@@ -19,6 +19,7 @@ var deckname = document.getElementById("decknom");
 var maindeck = document.getElementById("maindeck");
 var deckzone = document.getElementById("deckzone");
 var world = 0;
+var pages_gestio = document.getElementById("gestio");
 
 
 /**
@@ -164,9 +165,16 @@ function download() {
 function selecdeck(x) {
     var maindeck = document.getElementById(x);
     sessionStorage.setItem("nom", maindeck.children.item(1).textContent);
-    
+    document.location.pathname = "/Pages/Gestionnaire.html";
 }
 
+function splashscreen(x) {
+    var secondeck = document.getElementById(x);
+	secondeck.children.item(1).textContent = sessionStorage.getItem("nom");
+	console.log(secondeck);
+}
+
+pages_gestio.onload = console.log("test");
 
 
 
