@@ -151,18 +151,20 @@ function resetcreadeck() {
 }
 
 function download() {
-    if (x+1 < world) {
-        console.log("yes");
-    }
-    
-    var carte = new Flash(
-        sessionStorage.getItem(x).split("/")[1],
-        sessionStorage.getItem(x).split("/")[2],
-        sessionStorage.getItem(x).split("/")[3],
-        sessionStorage.getItem(x).split("/")[0]
-    );
-    
-    console.log(carte);
+    console.log("init... world:"+world);
+
+    for (let x = 0; x < sessionStorage.length - 1; x++) {
+			if (x + 1 < sessionStorage.length - 1) {
+				var carte = new Flash(
+					sessionStorage.getItem(x).split("/")[1],
+					sessionStorage.getItem(x).split("/")[2],
+					sessionStorage.getItem(x).split("/")[3],
+					sessionStorage.getItem(x).split("/")[0]
+				);
+				console.log(carte);
+			}
+			console.log("x:" + x);
+		}
 }
 
 
