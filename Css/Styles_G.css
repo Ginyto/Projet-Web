@@ -32,12 +32,93 @@
     position: absolute;
     height: 100%;
     width: 100%;
-    justify-content: center;
     align-items: center;
     flex-direction: column;
 }
 
+.flashcard_zone{
+    display: flex;
+    position: relative;
+    width: 300px;
+    height: 500px;
+}
 
+.flashcard{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: all 1s ease;
+}
+
+/**.flashcard:hover{
+    transform: rotateY(180deg);
+}**/
+
+#recto{
+    position: absolute;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    border-radius: 3%;
+    backface-visibility: hidden;
+    background-color: #FF79C6;
+    color: black;
+    justify-content: center;
+    align-items: center;
+}
+
+#verso{
+    position: absolute;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    border-radius: 3%;
+    backface-visibility: hidden;
+    background-color:coral;
+    color: black;
+    transform: rotateY(180deg);
+    justify-content: center;
+    align-items: center;
+}
+
+.switch{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.bouton_zone{
+    display: flex;
+    width: 300px;
+    height: fit-content;
+    margin-top: 25px;
+    justify-content: space-between;
+    flex-wrap: wrap;    
+}
+
+.boutons{
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    border-radius: 12%;
+    border: #282A36 solid;
+    width: fit-content auto;
+    background-color: coral;
+}
+
+#bfour{
+    display: flex;
+    margin-top: 15px;
+    width: 300px;
+    justify-content: center;
+}
+
+.boutons:hover{
+    border: #FF79C6 solid;
+    transition: all 0.5s;
+    transform: scale(1.3);
+}
 
 .boutons{
     display: flex;
@@ -71,6 +152,7 @@
     flex-direction: column;
     justify-content: space-around;
     border-radius: 12%;
+    margin-bottom: 50%;
 }
 
 .maindeck:hover{
