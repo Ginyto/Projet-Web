@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Gestionnaire de Deck</title>
+    <link rel="stylesheet" href="/Css/Styles_G.css">
+
+</head>
+
+<header class="ciel">
+    <h1 class="titre">Gestionnaire de Deck</h1>
+    <nav class="menu">
+        <div class="choice" onclick="document.location.pathname = '/Pages/Index.html'">First</div>
+        <div class="choice" onclick="document.location.pathname = '/Pages/Flashcards.html'">Flashcardo</div>
+        <div class="choice" onclick="document.location.pathname = '/Pages/Addcarte.html'">Création de deck</div>
+        <div class="choice" onclick="document.location.pathname = '/Pages/Gestionnaire.html'">Gestionnaire de Deck</div>
+    </nav>
+</header>
+
+<body>
+
+    <div class="flexzone">
+
+    <div class="deck_zone">
+        <div class="maindeck" id="maindeck" value="1" onclick="document.location.pathname='/Pages/Gestionnaire.html'">
+            <div class="infodeck" id="nom">Nom du deck</div>
+            <div class="infodeck" id="nbr">Nombre de cartes</div>
+        </div>
+    </div>
+
+    </div>
+
+
+    <script src="/Js/Flashcards.js"></script>
+</body>
+
+
+</html>

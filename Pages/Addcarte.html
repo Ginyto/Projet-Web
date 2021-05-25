@@ -15,6 +15,12 @@
 
 <header class="ciel">
     <h1 class="titre">Création de Deck</h1>
+    <nav class="menu">
+        <div class="choice" onclick="document.location.pathname = '/Pages/Addcarte.html'">First</div>
+        <div class="choice" onclick="document.location.pathname = '/Pages/Flashcards.html'">Flashcardo</div>
+        <div class="choice" onclick="document.location.pathname = '/Pages/Addcarte.html'">Création de deck</div>
+        <div class="choice" onclick="document.location.pathname = '/Pages/Gestionnaire.html'">Gestionnaire de Deck</div>
+    </nav>
 </header>
 
 <body>
@@ -42,7 +48,7 @@
 
             <div class="add">
                 <button type="submit" class="boutons">
-                    Supprimer
+                    Fin de Deck
                 </button>
             </div>
 
@@ -52,6 +58,13 @@
                 </button>
             </div>
 
+        </div>
+
+        <div class="deck_zone">
+            <div class="maindeck" id="maindeck" value="1" onclick="document.location.pathname='/Pages/Gestionnaire.html'">
+                <div class="infodeck" id="nom">Nom du deck</div>
+                <div class="infodeck" id="nbr">Nombre de cartes</div>
+            </div>
         </div>
 
     </div>

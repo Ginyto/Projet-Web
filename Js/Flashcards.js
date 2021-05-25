@@ -15,6 +15,7 @@ var def = document.getElementById("def");
 var deck = [];
 var num = document.getElementById("num");
 var deckname = document.getElementById("decknom");
+var maindeck = document.getElementById("maindeck");
 
 
 /**
@@ -73,10 +74,12 @@ function succes() {
 
 function addcard() {
     var carte = new Flash(terme.value, def.value, false, deckname.value);
-    deckname.style =  "border: #282A36";
+    deckname.style = "border: #282A36";
+    maindeck.children.item(0).textContent = carte.deck;
     terme.value = "";
     def.value = "";
-    num.textContent = "No." + (deck.length+2);
+    num.textContent = "No." + (deck.length + 2);
+    maindeck.children.item(1).textContent = deck.length + 1;
     deck.push(carte);
 }
 

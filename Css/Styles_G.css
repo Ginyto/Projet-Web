@@ -32,64 +32,23 @@
     position: absolute;
     height: 100%;
     width: 100%;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
-    
-}
-
-.creadeck{
-    display: flex;
-    width: 500px;
-    height: 200px;
-    border: coral solid 2px;
-    align-self: center;
-    flex-direction: column;
-    justify-content: space-around;
-    margin-top: 15px;
-}
-
-.titulo{
-    text-align: center;
-    color: coral;
-}
-
-#num{
-    text-align: start;
-    font-size: 25px;
-    margin-left: 5px;
-}
-
-.saisie{
-    border: #282A36;
-    border-bottom: coral solid 1px;
-    width: 90%;
-    margin-left: 25px;
-    text-align: center;
-    color: coral;
-    font-size: 15px;
-    
 }
 
 
-#def{
-    margin-bottom: 15px;
-}
-
-.bouton_zone{
-    display: flex;
-    align-self: center;
-    width: 500px;
-    margin-top: 25px;
-    justify-content: space-around;
-    flex-wrap: wrap;    
-}
 
 .boutons{
+    display: flex;
+    align-items: center;
     padding: 20px;
     border-radius: 12%;
     border: #282A36 solid;
     width: fit-content auto;
     background-color: coral;
 }
+
 
 .boutons:hover{
     border: #FF79C6 solid;
