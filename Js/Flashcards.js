@@ -18,6 +18,7 @@ var num = document.getElementById("num");
 var deckname = document.getElementById("decknom");
 var maindeck = document.getElementById("maindeck");
 var deckzone = document.getElementById("deckzone");
+var world = 0;
 
 
 /**
@@ -100,12 +101,13 @@ function addcard() {
     def.value = "";
     num.textContent = "No." + (deck.length+ 2);
     maindeck.children.item(2).textContent = deck.length + 1;
+    sessionStorage.setItem(world, (carte.deck+'/'+carte.recto+'/'+carte.verso+'/'+carte.check));
     deck.push(carte);
+    world++;
 }
 
 function creadeack() {
     memdeck.push(deck);
-    cloudeck();
     deck = [];
 
     var newdeck = document.createElement("div");
@@ -134,6 +136,8 @@ function creadeack() {
     console.log(memdeck);
     console.log(memdeck[0].length)
 
+
+
 }
 
 function resetcreadeck() {
@@ -146,13 +150,19 @@ function resetcreadeck() {
     creadeack(1);
 }
 
-function cloudeck() {
-    sessionStorage.setItem(memdeck.length, deck.carte);
-
-}
-
-function test() {
-    console.log(memdeck);
+function download() {
+    if (x+1 < world) {
+        console.log("yes");
+    }
+    
+    var carte = new Flash(
+        sessionStorage.getItem(x).split("/")[1],
+        sessionStorage.getItem(x).split("/")[2],
+        sessionStorage.getItem(x).split("/")[3],
+        sessionStorage.getItem(x).split("/")[0]
+    );
+    
+    console.log(carte);
 }
 
 
