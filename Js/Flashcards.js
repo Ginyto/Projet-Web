@@ -109,7 +109,7 @@ function addcard() {
     world++;
 }
 
-function creadeack() {
+function creadeck() {
     memdeck.push(deck);
     deck = [];
 
@@ -144,7 +144,7 @@ function resetcreadeck() {
     def.value = "";
     num.textContent = "No.1";
     num = 0; 
-    creadeack(1);
+    creadeck(1);
 }
 
 function download() {
@@ -196,9 +196,43 @@ function download() {
         }
 
         console.log(memdeck);
+
     }
 
+    for (let i = 0; i < memdeck.length; i++) {
+		loadingdeck(i);
+	}
 
+
+}
+
+function loadingdeck(x) {
+
+    if (x == 0) {
+        document.getElementById("0").remove();
+    }
+
+    var newdeck = document.createElement("div");
+    console.log(memdeck.length);
+    nuevo(newdeck, "maindeck", memdeck.length);
+    nuevoclick(newdeck,"selecdeck("+memdeck.length+")");
+    deckzone.appendChild(newdeck);
+
+    var no = document.createElement("div");
+    var nomdeck = document.createElement("div");
+    var countdeck = document.createElement("div");
+
+    nuevo(no, "infodeck", "no");
+    nuevo(nomdeck, "infodeck", "nom");
+    nuevo(countdeck, "infodeck", "nbr");
+
+    nuevotext(no, "No." + (x+1));
+    nuevotext(nomdeck, memdeck[x][0].deck);
+    nuevotext(countdeck, memdeck[x].length);
+
+    newdeck.appendChild(no);
+    newdeck.appendChild(nomdeck);
+    newdeck.appendChild(countdeck);
 }
 
 function selecdeck(x) {
@@ -213,7 +247,7 @@ function splashscreen(x) {
 	console.log(secondeck);
 }
 
-pages_gestio.onload = splashscreen(0);
+//pages_gestio.onload = splashscreen(0);
 
 
 
