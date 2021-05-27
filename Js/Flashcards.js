@@ -148,26 +148,54 @@ function resetcreadeck() {
 }
 
 function download() {
-    console.log("init... world: "+localStorage.length);
+    console.log("init... world: " + localStorage.length);
+
+    var superdeck = [];
 
     for (let x = 0; x < localStorage.length; x++) {
-			if (x + 1 < localStorage.length && localStorage.getItem(x)) {
-				var carte = new Flash(
-					localStorage.getItem(x).split("/")[1],
-					localStorage.getItem(x).split("/")[2],
-					localStorage.getItem(x).split("/")[3],
-					localStorage.getItem(x).split("/")[0]
-				);
-				console.log(carte);
-			}
+			
+		var carte = new Flash(
+		localStorage.getItem(x).split("/")[1],
+		localStorage.getItem(x).split("/")[2],
+		localStorage.getItem(x).split("/")[3],
+		localStorage.getItem(x).split("/")[0]
+	    );
+        console.log(carte);
+        superdeck.push(carte);
+	}
 	
-    }
+    
     memdeck = [];//on nettoie la memoire interne pour la remplacer par la memoire cloud(localstorage)
 
-    for (let i = 0; i< array.length; i++) {
-      for (let j = 0; j < array.length; j++) {
+    for (let i = 0; i < superdeck.length; i++) {
+        var nom_mem = superdeck[i].deck;
+        deck = [];
+        console.log("deck :");
 
-      }
+        for (let j = 0; j < superdeck.length; j++) {
+            var nom = superdeck[j].deck;
+
+            if (nom_mem == nom) {
+                console.log("add");
+                deck.push(superdeck[j])
+            }
+        }
+
+        console.log(deck);
+        var onoff = true;
+
+        for (let i = 0; i < memdeck.length; i++) {
+            if (memdeck[i][0].deck == deck[0].deck){
+                console.log("oui");
+                onoff = false;
+            }
+        }
+
+        if (onoff) {
+            memdeck.push(deck);
+        }
+
+        console.log(memdeck);
     }
 
 
