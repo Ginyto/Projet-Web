@@ -20,11 +20,12 @@ var maindeck = document.getElementById("maindeck");
 var deckzone = document.getElementById("deckzone");
 var world = 0;
 var pages_gestio = document.getElementById("gestio");
-
 var yugi = 0;
 var yo = 0;
 
 //localStorage.clear();
+
+
 
 
 /**
@@ -152,7 +153,7 @@ function resetcreadeck() {
     creadeck(1);
 }
 
-function download() {
+function download(x) {
     console.log("init... world: " + localStorage.length);
 
     var superdeck = [];
@@ -211,6 +212,11 @@ function download() {
     loadingdeck((memdeck.length), "Nom du deck", "Nombre de cartes");
     world = memdeck.length + 1;
     deck = [];
+
+    if (x == true) {
+        deckzone.children.item(memdeck.length).remove();
+
+    }
 }
 
 function loadingdeck(x, nom, nbr) {
@@ -222,7 +228,7 @@ function loadingdeck(x, nom, nbr) {
     var newdeck = document.createElement("div");
     //console.log(memdeck.length);
     nuevo(newdeck, "maindeck", x);
-    nuevoclick(newdeck,"selecdeck("+x+")");
+    nuevoclick(newdeck,"affichage("+x+","+"yo"+")");
     deckzone.appendChild(newdeck);
 
     var no = document.createElement("div");
@@ -240,19 +246,6 @@ function loadingdeck(x, nom, nbr) {
     newdeck.appendChild(no);
     newdeck.appendChild(nomdeck);
     newdeck.appendChild(countdeck);
-}
-
-function selecdeck(x) {
-    var maindeck = document.getElementById(x);
-    sessionStorage.setItem("nom", maindeck.children.item(1).textContent);
-    //document.location.pathname = "/Pages/Gestionnaire.html";
-    affichage(yugi, yo);
-}
-
-function splashscreen(x) {
-    var secondeck = document.getElementById(x);
-	secondeck.children.item(0).textContent = sessionStorage.getItem("nom");
-	console.log(secondeck);
 }
 
 function affichage(x, y) {
@@ -278,5 +271,24 @@ function precedent() {
     console.log(yo);
 }
 
-//pages_gestio.onload = splashscreen(0);
+function pathfinder(param) {
+    if (param == 0) {
+        document.location.pathname = "/Pages/Index.html";
+    }
+
+    if (param == 1) {
+        document.location.pathname = "/Pages/Flashcards.html";
+    }
+
+    if (param == 2) {
+			document.location.pathname = "/Pages/Addcarte.html";
+    }
+    
+    if (param == 3) {
+			document.location.pathname = "/Pages/Gestionnaire.html";
+    }
+}
+
+
+
 

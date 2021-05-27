@@ -18,10 +18,10 @@
 <header class="ciel">
     <h1 class="titre">Gestionnaire de Deck</h1>
     <nav class="menu">
-        <div class="choice" onclick="document.location.pathname = '/Pages/Index.html'">First</div>
-        <div class="choice" onclick="document.location.pathname = '/Pages/Flashcards.html'">Flashcardo</div>
-        <div class="choice" onclick="document.location.pathname = '/Pages/Addcarte.html'">Création de deck</div>
-        <div class="choice" onclick="document.location.pathname = '/Pages/Gestionnaire.html'">Gestionnaire de Deck</div>
+        <div class="choice" onclick="pathfinder(0)">First</div>
+        <div class="choice" onclick="pathfinder(1)">Flashcardo</div>
+        <div class="choice" onclick="pathfinder(2)">Création de deck</div>
+        <div class="choice" onclick="pathfinder(3)">Gestionnaire de Deck</div>
     </nav>
 </header>
 
@@ -61,17 +61,11 @@
         </button>
     
         <div class="switch">
-            <button type="submit" id="switch" class="boutons" onclick="document.location.pathname = '/Pages/Flashcards.html'">
+            <button type="submit" id="switch" class="boutons" onclick="pathfinder(1)">
                 Flashcardo
             </button>
         </div>
 
-        <div class="switch">
-            <button type="submit" class="boutons" onclick="download()">
-                download
-            </button>
-        </div>
-    
     </div>
 
     </div>

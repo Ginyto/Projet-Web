@@ -17,12 +17,14 @@
 
     <header class="ciel">
         <h1 class="titre">Flashcardo</h1>
+
         <nav class="menu">
-            <div class="choice" onclick="document.location.pathname = '/Pages/Addcarte.html'">First</div>
-            <div class="choice" onclick="document.location.pathname = '/Pages/Flashcards.html'">Flashcardo</div>
-            <div class="choice" onclick="document.location.pathname = '/Pages/Addcarte.html'">Création de deck</div>
-            <div class="choice" onclick="document.location.pathname = '/Pages/Gestionnaire.html'">Gestionnaire de Deck</div>
+            <div class="choice" onclick="pathfinder(0)">First</div>
+            <div class="choice" onclick="pathfinder(1)">Flashcardo</div>
+            <div class="choice" onclick="pathfinder(2)">Création de deck</div>
+            <div class="choice" onclick="pathfinder(3)">Gestionnaire de Deck</div>
         </nav>
+
     </header>
 
     <body>
@@ -68,11 +70,18 @@
                 </button>
 
                 <div class="switch">
-                    <button type="submit" class="boutons" onclick="document.location.pathname = '/Pages/Addcarte.html'">
-                        Création de Deck
+                    <button type="submit" class="boutons" onclick="pathfinder(2)">
+                        normal
                     </button>
                 </div>
+                
+            </div>
 
+            <div class="deck_zone" id="deckzone">
+                <div class="maindeck" id="0" onclick="affichage()">
+                    <div class="infodeck" id="nom">Nom du deck</div>
+                    <div class="infodeck" id="nbr">Nombre de cartes</div>
+                </div>
             </div>
 
             

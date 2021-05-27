@@ -120,10 +120,9 @@
     display: flex;
     justify-content: center;
     margin-top: 30px;
-    height: 130px;
-    width: 100%;
-    justify-content: space-around;
+    height:fit-content;
     flex-wrap: wrap;
+
 }
 
 .maindeck{
@@ -135,7 +134,9 @@
     flex-direction: column;
     justify-content: space-around;
     border-radius: 11%;
-    margin-bottom: 50%;
+    margin: 25px;
+
+
 }
 
 .maindeck:hover{
