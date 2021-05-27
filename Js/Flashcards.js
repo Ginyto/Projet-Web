@@ -160,7 +160,7 @@ function download() {
 		localStorage.getItem(x).split("/")[3],
 		localStorage.getItem(x).split("/")[0]
 	    );
-        console.log(carte);
+        //console.log(carte);
         superdeck.push(carte);
 	}
 	
@@ -170,23 +170,23 @@ function download() {
     for (let i = 0; i < superdeck.length; i++) {
         var nom_mem = superdeck[i].deck;
         deck = [];
-        console.log("deck :");
+        //console.log("deck :");
 
         for (let j = 0; j < superdeck.length; j++) {
             var nom = superdeck[j].deck;
 
             if (nom_mem == nom) {
-                console.log("add");
+                //console.log("add");
                 deck.push(superdeck[j])
             }
         }
 
-        console.log(deck);
+        //console.log(deck);
         var onoff = true;
 
         for (let i = 0; i < memdeck.length; i++) {
             if (memdeck[i][0].deck == deck[0].deck){
-                console.log("oui");
+                //console.log("oui");
                 onoff = false;
             }
         }
@@ -195,7 +195,7 @@ function download() {
             memdeck.push(deck);
         }
 
-        console.log(memdeck);
+        //console.log(memdeck);
 
     }
 
@@ -213,7 +213,7 @@ function loadingdeck(x) {
     }
 
     var newdeck = document.createElement("div");
-    console.log(memdeck.length);
+    //console.log(memdeck.length);
     nuevo(newdeck, "maindeck", memdeck.length);
     nuevoclick(newdeck,"selecdeck("+memdeck.length+")");
     deckzone.appendChild(newdeck);
