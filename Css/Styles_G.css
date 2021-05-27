@@ -30,7 +30,6 @@
 
 .flexzone{
     display: flex;
-    position: absolute;
     height: 100%;
     width: 100%;
     align-items: center;
@@ -85,7 +84,7 @@
 
 .switch{
     display: flex;
-    width: 100%;
+    width: fit-content;
     justify-content: center;
 }
 
@@ -93,42 +92,20 @@
     display: flex;
     width: 300px;
     height: fit-content;
+    justify-content: space-around;
     margin-top: 25px;
-    justify-content: space-between;
-    flex-wrap: wrap;    
+    flex-wrap: wrap;   
+    flex-direction: row;
 }
 
 .boutons{
-    display: flex;
-    align-items: center;
+
     padding: 20px;
     border-radius: 12%;
     border: #282A36 solid;
-    width: fit-content auto;
+    width: 100px;
     background-color: coral;
-}
-
-#bfour{
-    display: flex;
-    margin-top: 15px;
-    width: 300px;
-    justify-content: center;
-}
-
-.boutons:hover{
-    border: #FF79C6 solid;
-    transition: all 0.5s;
-    transform: scale(1.3);
-}
-
-.boutons{
-    display: flex;
-    align-items: center;
-    padding: 20px;
-    border-radius: 12%;
-    border: #282A36 solid;
-    width: fit-content auto;
-    background-color: coral;
+    text-align: center;
 }
 
 
@@ -137,6 +114,7 @@
     transition: all 0.5s;
     transform: scale(1.3);
 }
+
 
 .deck_zone{
     display: flex;

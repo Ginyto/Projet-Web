@@ -21,7 +21,10 @@ var deckzone = document.getElementById("deckzone");
 var world = 0;
 var pages_gestio = document.getElementById("gestio");
 
-localStorage.clear();
+var yugi = 0;
+var yo = 0;
+
+//localStorage.clear();
 
 
 /**
@@ -52,6 +55,7 @@ function counter() {
 }
 
 function flip() {
+    flashcard.style = "transition: all 1s ease;";
     flashcard.style.transform = "rotateY(180deg)";
     ecaflip = true;
     console.log(ecaflip);
@@ -59,6 +63,7 @@ function flip() {
 
 function flop() {
     flashcard.style.transform = "rotateY(0deg)";
+    flashcard.style = "transition: all 0.05s ease;";
     ecaflip = false;
     console.log(ecaflip);
 }
@@ -240,7 +245,8 @@ function loadingdeck(x, nom, nbr) {
 function selecdeck(x) {
     var maindeck = document.getElementById(x);
     sessionStorage.setItem("nom", maindeck.children.item(1).textContent);
-    document.location.pathname = "/Pages/Gestionnaire.html";
+    //document.location.pathname = "/Pages/Gestionnaire.html";
+    affichage(yugi, yo);
 }
 
 function splashscreen(x) {
@@ -249,11 +255,28 @@ function splashscreen(x) {
 	console.log(secondeck);
 }
 
+function affichage(x, y) {
+    rface.textContent = memdeck[x][y].recto;
+    vface.textContent = memdeck[x][y].verso;
+}
+
+function suivant() {
+    flop();
+    if (yo < memdeck[yugi].length-1) {
+        yo++;
+    }
+    affichage(yugi, yo);
+    console.log(yo);
+}
+
+function precedent() {
+    flop();
+    if (yo > 0) {
+        yo--;
+    }
+    affichage(yugi, yo);
+    console.log(yo);
+}
+
 //pages_gestio.onload = splashscreen(0);
-
-
-
-
-
-
 
