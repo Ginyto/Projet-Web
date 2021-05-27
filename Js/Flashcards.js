@@ -143,12 +143,12 @@ function resetcreadeck() {
     terme.value = "";
     def.value = "";
     num.textContent = "No.1";
-    num = 0;
+    num = 0; 
     creadeack(1);
 }
 
 function download() {
-    console.log("init... world:"+localStorage.length);
+    console.log("init... world: "+localStorage.length);
 
     for (let x = 0; x < localStorage.length; x++) {
 			if (x + 1 < localStorage.length && localStorage.getItem(x)) {
@@ -163,7 +163,14 @@ function download() {
 	
     }
     memdeck = [];//on nettoie la memoire interne pour la remplacer par la memoire cloud(localstorage)
-    
+
+    for (let i = 0; i< array.length; i++) {
+      for (let j = 0; j < array.length; j++) {
+
+      }
+    }
+
+
 }
 
 function selecdeck(x) {
