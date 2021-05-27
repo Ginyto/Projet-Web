@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr" id="gestio">
+<html lang="fr">
 
 <head>
 
@@ -29,7 +29,7 @@
 
     <div class="flexzone">
 
-    <div class="deck_zone">
+    <div class="deck_zone" id="deckzone">
         <div class="maindeck" id="0" onclick="download()">
             <div class="infodeck" id="nom">Nom du deck</div>
             <div class="infodeck" id="nbr">Nombre de cartes</div>
@@ -63,6 +63,12 @@
         <div class="switch">
             <button type="submit" id="switch" class="boutons" onclick="document.location.pathname = '/Pages/Flashcards.html'">
                 Flashcardo
+            </button>
+        </div>
+
+        <div class="switch">
+            <button type="submit" class="boutons" onclick="download()">
+                download
             </button>
         </div>
     

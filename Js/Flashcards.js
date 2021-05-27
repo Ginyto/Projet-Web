@@ -21,7 +21,7 @@ var deckzone = document.getElementById("deckzone");
 var world = 0;
 var pages_gestio = document.getElementById("gestio");
 
-//localStorage.clear();
+localStorage.clear();
 
 
 /**
@@ -93,9 +93,8 @@ function nuevoclick(param,path) {
 
 
 function addcard() {
-    var taille = memdeck.length;
-    console.log(taille)
-    var maindeck = document.getElementById(taille);
+    var maindeck = document.getElementById(memdeck.length);
+    console.log(maindeck);
     var carte = new Flash(terme.value, def.value, false, deckname.value);
 
     deckname.style = "border: #282A36";
@@ -104,6 +103,7 @@ function addcard() {
     def.value = "";
     num.textContent = "No." + (deck.length+ 2);
     maindeck.children.item(2).textContent = deck.length + 1;
+    console.log("world : "+world)
     localStorage.setItem(world, (carte.deck+'/'+carte.recto+'/'+carte.verso+'/'+carte.check));
     deck.push(carte);
     world++;
@@ -204,9 +204,8 @@ function download() {
     }
     
     loadingdeck((memdeck.length), "Nom du deck", "Nombre de cartes");
-
-
-
+    world = memdeck.length + 1;
+    deck = [];
 }
 
 function loadingdeck(x, nom, nbr) {
@@ -217,8 +216,8 @@ function loadingdeck(x, nom, nbr) {
 
     var newdeck = document.createElement("div");
     //console.log(memdeck.length);
-    nuevo(newdeck, "maindeck", memdeck.length);
-    nuevoclick(newdeck,"selecdeck("+memdeck.length+")");
+    nuevo(newdeck, "maindeck", x);
+    nuevoclick(newdeck,"selecdeck("+x+")");
     deckzone.appendChild(newdeck);
 
     var no = document.createElement("div");
