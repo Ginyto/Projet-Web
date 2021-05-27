@@ -21,6 +21,8 @@ var deckzone = document.getElementById("deckzone");
 var world = 0;
 var pages_gestio = document.getElementById("gestio");
 
+//localStorage.clear();
+
 
 /**
  * Classe Flashcards qui a pour paramètre recto et verso
@@ -91,7 +93,6 @@ function nuevoclick(param,path) {
 
 
 function addcard() {
-    sessionStorage.removeItem("IsThisFirstTime_Log_From_LiveServer");
     var taille = memdeck.length;
     console.log(taille)
     var maindeck = document.getElementById(taille);
@@ -103,7 +104,7 @@ function addcard() {
     def.value = "";
     num.textContent = "No." + (deck.length+ 2);
     maindeck.children.item(2).textContent = deck.length + 1;
-    sessionStorage.setItem(world, (carte.deck+'/'+carte.recto+'/'+carte.verso+'/'+carte.check));
+    localStorage.setItem(world, (carte.deck+'/'+carte.recto+'/'+carte.verso+'/'+carte.check));
     deck.push(carte);
     world++;
 }
@@ -147,19 +148,22 @@ function resetcreadeck() {
 }
 
 function download() {
-    console.log("init... world:"+sessionStorage.length);
+    console.log("init... world:"+localStorage.length);
 
-    for (let x = 0; x < sessionStorage.length; x++) {
-			if (x + 1 < sessionStorage.length && sessionStorage.getItem(x)) {
+    for (let x = 0; x < localStorage.length; x++) {
+			if (x + 1 < localStorage.length && localStorage.getItem(x)) {
 				var carte = new Flash(
-					sessionStorage.getItem(x).split("/")[1],
-					sessionStorage.getItem(x).split("/")[2],
-					sessionStorage.getItem(x).split("/")[3],
-					sessionStorage.getItem(x).split("/")[0]
+					localStorage.getItem(x).split("/")[1],
+					localStorage.getItem(x).split("/")[2],
+					localStorage.getItem(x).split("/")[3],
+					localStorage.getItem(x).split("/")[0]
 				);
 				console.log(carte);
 			}
-		}
+	
+    }
+    memdeck = [];//on nettoie la memoire interne pour la remplacer par la memoire cloud(localstorage)
+    
 }
 
 function selecdeck(x) {
@@ -175,6 +179,7 @@ function splashscreen(x) {
 }
 
 pages_gestio.onload = splashscreen(0);
+
 
 
 
