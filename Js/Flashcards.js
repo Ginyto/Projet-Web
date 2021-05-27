@@ -200,13 +200,16 @@ function download() {
     }
 
     for (let i = 0; i < memdeck.length; i++) {
-		loadingdeck(i);
-	}
+		loadingdeck(i, memdeck[i][0].deck, memdeck[i].length);
+    }
+    
+    loadingdeck((memdeck.length), "Nom du deck", "Nombre de cartes");
+
 
 
 }
 
-function loadingdeck(x) {
+function loadingdeck(x, nom, nbr) {
 
     if (x == 0) {
         document.getElementById("0").remove();
@@ -227,8 +230,8 @@ function loadingdeck(x) {
     nuevo(countdeck, "infodeck", "nbr");
 
     nuevotext(no, "No." + (x+1));
-    nuevotext(nomdeck, memdeck[x][0].deck);
-    nuevotext(countdeck, memdeck[x].length);
+    nuevotext(nomdeck, nom);
+    nuevotext(countdeck, nbr);
 
     newdeck.appendChild(no);
     newdeck.appendChild(nomdeck);
