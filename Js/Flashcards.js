@@ -18,7 +18,7 @@ var num = document.getElementById("num");
 var deckname = document.getElementById("decknom");
 var maindeck = document.getElementById("maindeck");
 var deckzone = document.getElementById("deckzone");
-var world = 0;
+var world = -1;
 var pages_gestio = document.getElementById("gestio");
 var yugi = 0;
 var yo = 0;
@@ -45,7 +45,7 @@ class Flash {
 }
 
 function hit() {
-    heal -= 2;
+    heal -= 10;
 	bdv.style.width = heal + "%";
 }
 
@@ -154,19 +154,19 @@ function resetcreadeck() {
 }
 
 function download(x) {
-    console.log("init... world: " + localStorage.length);
+    console.log("init... taille storage : " + localStorage.length);
 
     var superdeck = [];
 
-    for (let x = 0; x < localStorage.length; x++) {
-			
+    for (let i = 1; i <= localStorage.length; i++) {
+		
 		var carte = new Flash(
-		localStorage.getItem(x).split("/")[1],
-		localStorage.getItem(x).split("/")[2],
-		localStorage.getItem(x).split("/")[3],
-		localStorage.getItem(x).split("/")[0]
+		localStorage.getItem(i).split("/")[1],
+		localStorage.getItem(i).split("/")[2],
+		localStorage.getItem(i).split("/")[3],
+		localStorage.getItem(i).split("/")[0]
 	    );
-        //console.log(carte);
+        console.log(carte);
         superdeck.push(carte);
 	}
 	
@@ -205,18 +205,18 @@ function download(x) {
 
     }
 
+    //console.log(memdeck.length)
     for (let i = 0; i < memdeck.length; i++) {
+        //console.log(memdeck[i]);
+        //console.log("you")
 		loadingdeck(i, memdeck[i][0].deck, memdeck[i].length);
-    }
-    
-    loadingdeck((memdeck.length), "Nom du deck", "Nombre de cartes");
-    world = memdeck.length + 1;
-    deck = [];
+	}
 
     if (x == true) {
-        deckzone.children.item(memdeck.length).remove();
-
-    }
+		loadingdeck(memdeck.length, "Nom du deck", "Nombre de cartes");
+		world = memdeck.length + 1;
+		deck = [];
+	}
 }
 
 function loadingdeck(x, nom, nbr) {
@@ -288,7 +288,6 @@ function pathfinder(param) {
 			document.location.pathname = "/Pages/Gestionnaire.html";
     }
 }
-
 
 
 
