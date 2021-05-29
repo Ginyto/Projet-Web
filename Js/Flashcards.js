@@ -89,11 +89,12 @@ function succes() {
 		counter();
         suivant();
         memdeck[duel][yo].check = true;
+        resultat++;
 
         //console.log(memdeck[duel][yo]);
 
-        if (resultat == 3) {
-            alert("Game Over");
+        if (resultat >= memdeck[yugi].length) {
+            antiplay();
         }
 	}
 }
@@ -281,7 +282,7 @@ function modescreen(params) {
 
     //console.log(memdeck[params]);
 
-    affichage(params, yo);
+    affichage(yugi, yo);
     
 }
 
@@ -349,6 +350,7 @@ function play() {
 }
 
 function antiplay(params) {
+    flop();
     bzone.style.display = "none";
 	document.getElementById("start").style.display = "";
     deckzone.style.display = "flex";
