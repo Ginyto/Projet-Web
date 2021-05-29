@@ -90,6 +90,7 @@
     margin-top: 25px;
     flex-wrap: wrap;
     justify-content: space-between;
+    display: none;
 
 }
 
@@ -180,5 +181,9 @@
 .infodeck{
     background-color: #FF79C6;
     text-align: center;
+}
+
+#start{
+    margin-top: 15px;
 }
 

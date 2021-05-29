@@ -16,18 +16,20 @@ var deck = [];
 var memdeck = [];
 var num = document.getElementById("num");
 var deckname = document.getElementById("decknom");
-var maindeck = document.getElementById("maindeck");
+var maindeck = document.querySelector(".maindeck");
 var deckzone = document.getElementById("deckzone");
 var world = -1;
-var pages_gestio = document.getElementById("gestio");
-var yugi = 0;
-var yo = 0;
+var bzone = document.getElementById("bzone");
+
+duel = 0;
+battle = false;
+
 
 //localStorage.clear();
 
 
 
-
+/////////////////////////Cartes///////////////////
 /**
  * Classe Flashcards qui a pour paramètre recto et verso
  * @param recto face verso de la carte
@@ -80,9 +82,10 @@ function echec() {
 function succes() {
 	if (ecaflip == true) {
 		counter();
-		flop();
+        suivant();
 	}
 }
+
 
 function nuevo(param, classref, idref) {
     param.className = classref;
@@ -97,7 +100,9 @@ function nuevoclick(param,path) {
     param.setAttribute("onclick",path);
 }
 
-
+/**
+ * Ajout de carte de maniere dynamique
+ */
 function addcard() {
     var maindeck = document.getElementById(memdeck.length);
     console.log(maindeck);
@@ -115,6 +120,9 @@ function addcard() {
     world++;
 }
 
+/**
+ * Création de deck dynamiquement
+ */
 function creadeck() {
     memdeck.push(deck);
     deck = [];
@@ -153,8 +161,12 @@ function resetcreadeck() {
     creadeck(1);
 }
 
+/**
+ * Rafraichissement des données
+ * @param {Permet d'afficher un deck vierge ou non} x 
+ */
 function download(x) {
-    console.log("init... taille storage : " + localStorage.length);
+    //console.log("init... taille storage : " + localStorage.length);
 
     var superdeck = [];
 
@@ -166,7 +178,7 @@ function download(x) {
 		localStorage.getItem(i).split("/")[3],
 		localStorage.getItem(i).split("/")[0]
 	    );
-        console.log(carte);
+        //console.log(carte);
         superdeck.push(carte);
 	}
 	
@@ -228,7 +240,7 @@ function loadingdeck(x, nom, nbr) {
     var newdeck = document.createElement("div");
     //console.log(memdeck.length);
     nuevo(newdeck, "maindeck", x);
-    nuevoclick(newdeck,"affichage("+x+","+"yo"+")");
+    nuevoclick(newdeck, "modescreen(" + x +")");
     deckzone.appendChild(newdeck);
 
     var no = document.createElement("div");
@@ -248,6 +260,18 @@ function loadingdeck(x, nom, nbr) {
     newdeck.appendChild(countdeck);
 }
 
+
+function modescreen(params) {
+    yugi = params;
+    yo = 0;
+    duel = params;
+
+    //console.log(memdeck[params]);
+
+    affichage(params, yo);
+    
+}
+
 function affichage(x, y) {
     rface.textContent = memdeck[x][y].recto;
     vface.textContent = memdeck[x][y].verso;
@@ -258,6 +282,7 @@ function suivant() {
     if (yo < memdeck[yugi].length-1) {
         yo++;
     }
+    console.log("yugi = " + yugi + " yo = " + yo);
     affichage(yugi, yo);
     console.log(yo);
 }
@@ -289,5 +314,17 @@ function pathfinder(param) {
     }
 }
 
+function play() {
+    bzone.style.display = "flex";
+    document.getElementById("start").style.display = "none";
+    deckzone.style.display = "none";
+    score = 0;
+    console.log(duel);
+    battle = true;
+
+    if (battle == true) {
+	
+    }
+}
 
 
