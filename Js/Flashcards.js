@@ -21,8 +21,8 @@ var deckzone = document.getElementById("deckzone");
 var world = -1;
 var bzone = document.getElementById("bzone");
 
-duel = 0;
-battle = false;
+duel = 666;
+selected = false;
 
 
 //localStorage.clear();
@@ -58,10 +58,12 @@ function counter() {
 }
 
 function flip() {
-    flashcard.style = "transition: all 1s ease;";
-    flashcard.style.transform = "rotateY(180deg)";
-    ecaflip = true;
-    console.log(ecaflip);
+    if (selected) {
+        flashcard.style = "transition: all 1s ease;";
+        flashcard.style.transform = "rotateY(180deg)";
+	    ecaflip = true;
+        console.log(ecaflip);
+    }
 }
 
 function flop() {
@@ -265,6 +267,7 @@ function modescreen(params) {
     yugi = params;
     yo = 0;
     duel = params;
+    selected = true;
 
     //console.log(memdeck[params]);
 
@@ -279,12 +282,13 @@ function affichage(x, y) {
 
 function suivant() {
     flop();
-    if (yo < memdeck[yugi].length-1) {
+    if (yo < memdeck[yugi].length - 1) {
         yo++;
     }
+
     console.log("yugi = " + yugi + " yo = " + yo);
     affichage(yugi, yo);
-    console.log(yo);
+    //console.log(yo);
 }
 
 function precedent() {
@@ -315,16 +319,20 @@ function pathfinder(param) {
 }
 
 function play() {
-    bzone.style.display = "flex";
-    document.getElementById("start").style.display = "none";
-    deckzone.style.display = "none";
-    score = 0;
-    console.log(duel);
-    battle = true;
-
-    if (battle == true) {
-	
+    if (fanny) {
+        flop();
     }
+
+    selected = true;
+
+    if (duel != 666) {
+        bzone.style.display = "flex";
+        document.getElementById("start").style.display = "none";
+        deckzone.style.display = "none";
+        score = 0;
+    }
+
+
 }
 
 
