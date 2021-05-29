@@ -25,6 +25,7 @@ duel = 666;
 selected = false;
 
 
+
 //localStorage.clear();
 
 
@@ -45,6 +46,7 @@ class Flash {
         this.deck = deck;
     }
 }
+
 
 function hit() {
     heal -= 10;
@@ -77,7 +79,8 @@ function echec() {
     if (ecaflip == true) {
         hit();
 		counter();
-		flop();
+        flop();
+        memdeck[duel][yo].check = false;
     }
 }
 
@@ -85,6 +88,13 @@ function succes() {
 	if (ecaflip == true) {
 		counter();
         suivant();
+        memdeck[duel][yo].check = true;
+
+        //console.log(memdeck[duel][yo]);
+
+        if (resultat == 3) {
+            alert("Game Over");
+        }
 	}
 }
 
@@ -286,7 +296,7 @@ function suivant() {
         yo++;
     }
 
-    console.log("yugi = " + yugi + " yo = " + yo);
+    //console.log("yugi = " + yugi + " yo = " + yo);
     affichage(yugi, yo);
     //console.log(yo);
 }
@@ -296,7 +306,7 @@ function precedent() {
     if (yo > 0) {
         yo--;
     }
-    affichage(yugi, yo);
+    //affichage(yugi, yo);
     console.log(yo);
 }
 
@@ -319,6 +329,10 @@ function pathfinder(param) {
 }
 
 function play() {
+    resultat = 0;
+    
+
+
     if (fanny) {
         flop();
     }
@@ -332,7 +346,13 @@ function play() {
         score = 0;
     }
 
-
 }
 
+function antiplay(params) {
+    bzone.style.display = "none";
+	document.getElementById("start").style.display = "";
+    deckzone.style.display = "flex";
+    count = 0;
+    combien.textContent = 0;
 
+}
