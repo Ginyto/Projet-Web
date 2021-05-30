@@ -93,17 +93,20 @@
 
 .h{
     width: 8px;
-    height: 160px;
+    height: 60px;
+    position: absolute;
 }
 
 .m{
     width: 4px;
     height: 100px;
+    position: absolute;
 }
 
 .s{
     width: 2px;
     height: 140px;
+    position: absolute;
 }
 
 .h, .m, .s{
@@ -115,8 +118,8 @@
 .h::before{
     content: '';
     position: absolute;
-    width: 8px;
-    height: 80px;
+    width: 6px;
+    height: 35px;
     background:#FF79C6;
     z-index: 11;
     border-radius: 6px 6px 0 0;
