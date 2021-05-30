@@ -20,6 +20,7 @@ var maindeck = document.querySelector(".maindeck");
 var deckzone = document.getElementById("deckzone");
 var world = -1;
 var bzone = document.getElementById("bzone");
+var startzone = document.getElementById("mario");
 
 duel = 666;
 selected = false;
@@ -362,6 +363,7 @@ function play() {
         document.getElementById("start").style.display = "none";
         document.getElementById("shuffle").style.display = "none";
         deckzone.style.display = "none";
+        startzone.style.display = "none";
         score = 0;
     }
 
@@ -383,7 +385,8 @@ function shuffle(params) {
     document.getElementById("shuffle").style.display = "none";
     document.getElementById("start").style.display = "none";
 	deckzone.style.display = "none";
-	score = 0;
+    score = 0;
+    startzone.style.display = "none";
     
     var sdeck = [];
 
@@ -403,12 +406,14 @@ function shuffle(params) {
 }
 
 
+
 function antiplay(params) {
     flop();
     bzone.style.display = "none";
     document.getElementById("start").style.display = "";
     document.getElementById("shuffle").style.display = "";
     deckzone.style.display = "flex";
+    startzone.style.display = "flex";
     count = 0;
     combien.textContent = 0;
 
