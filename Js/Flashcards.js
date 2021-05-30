@@ -333,6 +333,10 @@ function pathfinder(param) {
     if (param == 3) {
         document.location.pathname = "/Pages/Gestionnaire.html";
     }
+
+    if (param == 4) {
+			document.location.pathname = "/Pages/Pomodoro.html";
+		}
 }
 
 function play() {
