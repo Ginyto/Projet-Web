@@ -336,7 +336,12 @@ function pathfinder(param) {
 
     if (param == 4) {
 			document.location.pathname = "/Pages/Pomodoro.html";
+    }
+
+    if (param == 5) {
+			document.location.pathname = "/Pages/About.html";
 		}
+
 }
 
 function play() {
