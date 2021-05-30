@@ -23,6 +23,7 @@ var bzone = document.getElementById("bzone");
 
 duel = 666;
 selected = false;
+battle = 1;
 
 
 
@@ -49,7 +50,7 @@ class Flash {
 
 
 function hit() {
-    heal -= 10;
+    heal -= 20;
 	bdv.style.width = heal + "%";
 }
 
@@ -60,7 +61,7 @@ function counter() {
 }
 
 function flip() {
-    if (selected) {
+    if (selected && battle!= 666) {
         flashcard.style = "transition: all 1s ease;";
         flashcard.style.transform = "rotateY(180deg)";
 	    ecaflip = true;
@@ -81,6 +82,11 @@ function echec() {
 		counter();
         flop();
         memdeck[duel][yo].check = false;
+
+        if (heal == 0) {
+            alert("Game Over tu dois encore réviser");
+            antiplay();
+        }
     }
 }
 
@@ -325,12 +331,14 @@ function pathfinder(param) {
     }
     
     if (param == 3) {
-			document.location.pathname = "/Pages/Gestionnaire.html";
+        document.location.pathname = "/Pages/Gestionnaire.html";
     }
 }
 
 function play() {
     resultat = 0;
+    bdv.style.width = "100%";
+    battle = 1;
     
 
 
@@ -343,16 +351,54 @@ function play() {
     if (duel != 666) {
         bzone.style.display = "flex";
         document.getElementById("start").style.display = "none";
+        document.getElementById("shuffle").style.display = "none";
         deckzone.style.display = "none";
         score = 0;
     }
 
 }
 
+function shuffle(params) {
+    battle = 1;
+    resultat = 0;
+	bdv.style.width = "100%";
+
+	if (fanny) {
+		flop();
+	}
+
+	selected = true;
+
+	
+	bzone.style.display = "flex";
+    document.getElementById("shuffle").style.display = "none";
+    document.getElementById("start").style.display = "none";
+	deckzone.style.display = "none";
+	score = 0;
+    
+    var sdeck = [];
+
+    for (let index = 0; index < memdeck.length; index++) {
+        for (let i = 0; i < memdeck[index].length; i++) {
+            sdeck.push(memdeck[index][i]);
+            
+        }
+    }
+
+    memdeck[0] = sdeck;
+
+    console.log(sdeck);
+    console.log(memdeck[0]);
+
+    modescreen(0);
+}
+
+
 function antiplay(params) {
     flop();
     bzone.style.display = "none";
-	document.getElementById("start").style.display = "";
+    document.getElementById("start").style.display = "";
+    document.getElementById("shuffle").style.display = "";
     deckzone.style.display = "flex";
     count = 0;
     combien.textContent = 0;
