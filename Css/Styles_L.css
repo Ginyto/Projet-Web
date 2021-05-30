@@ -66,8 +66,8 @@
 }
 
 .reloj{
-    width: 350px;
-    height: 350px;
+    width: 150px;
+    height: 150px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -84,33 +84,26 @@
 .reloj:before{
     content: '';
     position: absolute;
-    width: 20px;
-    height: 20px;
+    width: 15px;
+    height: 15px;
     background: #fff;
     border-radius: 50%;
-    z-index: 4;
+    z-index: 10000;
 }
-
-
-
 
 .h{
     width: 8px;
     height: 160px;
-    position: absolute;
 }
 
 .m{
     width: 4px;
-    height: 190px;
-    position: absolute;
+    height: 100px;
 }
 
 .s{
     width: 2px;
-    height: 220px;
-    position: absolute;
-
+    height: 140px;
 }
 
 .h, .m, .s{
@@ -125,7 +118,7 @@
     width: 8px;
     height: 80px;
     background:#FF79C6;
-    z-index: 3;
+    z-index: 11;
     border-radius: 6px 6px 0 0;
 
 }
@@ -134,9 +127,9 @@
     content: '';
     position: absolute;
     width: 4px;
-    height: 90px;
+    height: 50px;
     background: coral;
-    z-index: 2;
+    z-index: 12;
     border-radius: 6px 6px 0 0;
 }
 
@@ -144,11 +137,13 @@
     content: '';
     position: absolute;
     width: 2px;
-    height: 150px;
+    height: 100px;
     background: cyan;
-    z-index: 1;
+    z-index: 13;
     border-radius: 6px 6px 0 0;
 }
+
+
 
 
 
