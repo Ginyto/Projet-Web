@@ -73,12 +73,12 @@
     align-items: center;
     background: url(/horloge.png);
     background-size: cover;
-    border-radius: 50%;
+    border-radius: 20%;
     border:#282A36 4px solid;
     box-shadow: 0 -15px 15px rgba(255, 255, 255, 0.05),
                 inset 0 -15px 15px rgba(255, 255, 255, 0.05),
-                0 15px 15px rgba(0, 0, 0, 0.05),
-                inset 0 -15px 15px rgba(0, 0, 0, 0.05);
+                0 15px 15px rgba(0, 0, 0, 0.3),
+                inset 0 15px 15px rgba(0, 0, 0, 0.3);
 }
 
 .reloj:before{
@@ -88,7 +88,7 @@
     height: 15px;
     background: #fff;
     border-radius: 50%;
-    z-index: 10000;
+    z-index: 4;
 }
 
 .reloj .hora,
@@ -98,19 +98,19 @@
 
 }
 
-.reloj .hora, .h{
-    width: 160px;
+.h{
+    width: 8px;
     height: 160px;
 }
 
-.reloj .min, .m{
-    width: 190px;
+.m{
+    width: 4px;
     height: 190px;
 }
 
-.reloj .sec, .s{
-    width: 230px;
-    height: 230px;
+.s{
+    width: 2px;
+    height: 220px;
 }
 
 .h, .m, .s{
@@ -125,7 +125,7 @@
     width: 8px;
     height: 80px;
     background:#FF79C6;
-    z-index: 10;
+    z-index: 1;
     border-radius: 6px 6px 0 0;
 
 }
@@ -136,7 +136,7 @@
     width: 4px;
     height: 90px;
     background: coral;
-    z-index: 11;
+    z-index: 1;
     border-radius: 6px 6px 0 0;
 }
 
@@ -146,8 +146,9 @@
     width: 2px;
     height: 150px;
     background: cyan;
-    z-index: 12;
+    z-index: 1;
     border-radius: 6px 6px 0 0;
 }
+
 
 
