@@ -319,7 +319,7 @@ function precedent() {
 
 function pathfinder(param) {
     if (param == 0) {
-        document.location.pathname = "/Pages/Index.html";
+        document.location.pathname = "/Pages/Landing.html";
     }
 
     if (param == 1) {
