@@ -20,6 +20,7 @@
     color: coral;
     margin-top: 10px;
     margin-bottom: 10px;
+    flex-wrap: wrap;
 }
 
 .choice:hover{
@@ -28,10 +29,17 @@
     transform: scale(1.3);
 }
 
+.flexbox{
+    display: flex;
+    justify-content: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
 .flexzone{
     display: flex;
-    height: 100%;
-    width: 100%;
+    height: fit-content;
+    width: fit-content;
     align-items: center;
     flex-direction: column;
 }
@@ -41,6 +49,9 @@
     position: relative;
     width: 300px;
     height: 500px;
+
+    width: min-content 300px;
+    height: min-content 500px;
 }
 
 .flashcard{
@@ -156,8 +167,9 @@
 .deck_zone{
     display: flex;
     justify-content: center;
-    margin-top: 30px;
+
     height:fit-content;
+    width: fit-content;
     flex-wrap: wrap;
 }
 
@@ -192,5 +204,92 @@
     width: 50px;
     height: 50px;
     background-color: #FF79C6;
+}
+
+.reloj{
+    width: 150px;
+    height: 150px;
+    width: min-content 150px;
+    height: min-content 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url(/horloge.png);
+    background-size: cover;
+    border-radius: 20%;
+    border:#282A36 4px solid;
+    box-shadow: 0 -15px 15px rgba(255, 255, 255, 0.05),
+                inset 0 -15px 15px rgba(255, 255, 255, 0.05),
+                0 15px 15px rgba(0, 0, 0, 0.3),
+                inset 0 15px 15px rgba(0, 0, 0, 0.3);
+}
+
+.reloj:before{
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: #fff;
+    border-radius: 50%;
+    z-index: 10000;
+}
+
+.h{
+    width: 8px;
+    height: 60px;
+    position: absolute;
+}
+
+.m{
+    width: 4px;
+    height: 90px;
+    position: absolute;
+}
+
+.s{
+    width: 2px;
+    height: 140px;
+    position: absolute;
+}
+
+.h, .m, .s{
+    display: flex;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.h::before{
+    content: '';
+    position: absolute;
+    width: 6px;
+    height: 30px;
+    background:#FF79C6;
+    z-index: 11;
+    border-radius: 6px 6px 0 0;
+
+}
+
+.m::before{
+    content: '';
+    position: absolute;
+    width: 4px;
+    height: 50px;
+    background: coral;
+    z-index: 12;
+    border-radius: 6px 6px 0 0;
+}
+
+.s::before{
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 100px;
+    background: cyan;
+    z-index: 13;
+    border-radius: 6px 6px 0 0;
+}
+
+.reloj{
+    margin: 28px;
 }
 

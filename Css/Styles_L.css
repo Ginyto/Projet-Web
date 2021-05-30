@@ -33,9 +33,6 @@
     display: flex;
     height: 100%;
     width: 100%;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
 }
 
 .bouton_zone{
@@ -84,8 +81,8 @@
 .reloj:before{
     content: '';
     position: absolute;
-    width: 15px;
-    height: 15px;
+    width: 10px;
+    height: 10px;
     background: #fff;
     border-radius: 50%;
     z-index: 10000;
@@ -99,7 +96,7 @@
 
 .m{
     width: 4px;
-    height: 100px;
+    height: 90px;
     position: absolute;
 }
 
@@ -119,7 +116,7 @@
     content: '';
     position: absolute;
     width: 6px;
-    height: 35px;
+    height: 30px;
     background:#FF79C6;
     z-index: 11;
     border-radius: 6px 6px 0 0;
@@ -146,7 +143,9 @@
     border-radius: 6px 6px 0 0;
 }
 
-
+.reloj{
+    margin: 25px;
+}
 
 
 
