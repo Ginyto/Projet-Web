@@ -326,6 +326,7 @@ function download(x) {
     cmaindeck = document.getElementById(memdeck.length);
     console.log(cmaindeck);
 
+    sessionStorage.setItem("sec", (sessionStorage.getItem("sec")-1));
     pomodoro();
 }
 
@@ -554,23 +555,24 @@ function pomodoro(params) {
     if (tempus) {
         var chrono = (document.getElementById("tiempo").value - 1);
         sessionStorage.setItem("min", chrono);
+        sessionStorage.setItem("sec", 59);
         console.log("yes");
     }
 
     var pomo = document.getElementById("pomo");
 
-    var sec = 59;
+    var sec = sessionStorage.getItem("sec");
     
-    console.log(chrono);
-    console.log(sessionStorage.getItem("min"));
+    //console.log(chrono);
+    //console.log(sessionStorage.getItem("min"));
 
 
-    if (sessionStorage.getItem("min") >= 0) {
+    if (sessionStorage.getItem("min") >= 0 && sessionStorage.getItem("sec") > 0) {
         timer = setInterval(function () {
             chrono = sessionStorage.getItem("min");
             sessionStorage.setItem("min", chrono);
             sessionStorage.setItem("sec", sec);
-            console.log(sec);
+            //console.log(sec);
 
             if (sessionStorage.getItem("min") == 0 && sec == 0) {
                 console.log("oep");
