@@ -75,6 +75,7 @@
     border-radius: 3%;
     backface-visibility: hidden;
     color: #FF79C6;
+    background-color: #1b1d24;
     justify-content: center;
     align-items: center;
 
@@ -93,6 +94,7 @@
     border-radius: 3%;
     backface-visibility: hidden;
     color:coral;
+    background-color: #1b1d24;
     transform: rotateY(180deg);
     justify-content: center;
     align-items: center;
@@ -125,7 +127,8 @@
     width: fit-content;
     color: coral;
 
-     
+    background-color: #1b1d24;
+
     border: #FF79C6 4px solid;
     box-shadow: 0 -15px 15px rgba(255, 255, 255, 0.05),
                 inset 0 -15px 15px rgba(255, 255, 255, 0.05),
@@ -148,6 +151,7 @@
     width: 100px;
     height: 70px;
     color: coral;
+    background-color: #1b1d24;
     text-align: center;
 
     border: #FF79C6 4px solid;
@@ -211,6 +215,7 @@
     width: 100px;
     height: 100px;
     border: #FF79C6 4px solid;
+    background-color: #1b1d24;
 
     flex-direction: column;
     justify-content: space-around;
@@ -232,6 +237,7 @@
 .infodeck{
     color: #FF79C6;
     text-align: center;
+    background-color: #1b1d24;
 }
 
 #score{

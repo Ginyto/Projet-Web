@@ -140,6 +140,17 @@ function addcard() {
     world++;
 }
 
+function delatecard(params) {
+    console.log(memdeck[yugi][yo]);
+    window.confirm("Voulez vous vraiment supprimer la carte ?");
+    console.log("Yes");
+    document.getElementById(yugi).children.item(2).textContent = memdeck[yugi].length - 1;
+    memdeck[yugi].splice(yo,1);
+    console.log(memdeck[yugi]);
+    
+
+}
+
 /**
  * Création de deck dynamiquement
  */
@@ -282,6 +293,7 @@ function loadingdeck(x, nom, nbr) {
 
 
 function modescreen(params) {
+    flop();
     yugi = params;
     yo = 0;
     duel = params;
@@ -408,6 +420,7 @@ function shuffle(params) {
 
 
 function antiplay(params) {
+    bdv.style.width = "100%";
     flop();
     bzone.style.display = "none";
     document.getElementById("start").style.display = "";
@@ -420,7 +433,7 @@ function antiplay(params) {
 }
 
 //////////////////pomodoro////////////////
-const deg = 6;
+/*const deg = 6;
 const h = document.querySelector(".h");
 const m = document.querySelector(".m");
 const s = document.querySelector(".s");
@@ -438,4 +451,6 @@ setInterval(() => {
 	h.style.transform = `rotateZ(${hh + mm / 12}deg)`;
 	m.style.transform = `rotateZ(${mm + ss / 60}deg)`;
 	s.style.transform = `rotateZ(${ss}deg)`;
-});
+});*/
+
+
