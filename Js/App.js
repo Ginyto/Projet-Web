@@ -26,6 +26,8 @@ duel = 666;
 selected = false;
 battle = 1;
 
+ingame = true;
+
 
 
 
@@ -258,57 +260,56 @@ function resetcreadeck() {
  * @param {Permet d'afficher un deck vierge ou non} x 
  */
 function download(x) {
-    //console.log("init... taille storage : " + localStorage.length);
+    console.log(localStorage.length);
+    if (localStorage.length > 0) {
+			//console.log("init... taille storage : " + localStorage.length);
 
-    var superdeck = [];
+			var superdeck = [];
 
-    
+			for (let i = 0; i <= localStorage.length - 1; i++) {
+				var carte = new Flash(
+					localStorage.getItem(i).split("/")[1],
+					localStorage.getItem(i).split("/")[2],
+					localStorage.getItem(i).split("/")[3],
+					localStorage.getItem(i).split("/")[0]
+				);
+				//console.log(carte);
+				superdeck.push(carte);
+			}
 
-    for (let i = 0; i <= localStorage.length-1; i++) {
-		var carte = new Flash(
-		localStorage.getItem(i).split("/")[1],
-		localStorage.getItem(i).split("/")[2],
-		localStorage.getItem(i).split("/")[3],
-		localStorage.getItem(i).split("/")[0]
-	    );
-        //console.log(carte);
-        superdeck.push(carte);
-	}
-	
-    
-    memdeck = [];//on nettoie la memoire interne pour la remplacer par la memoire cloud(localstorage)
+			memdeck = []; //on nettoie la memoire interne pour la remplacer par la memoire cloud(localstorage)
 
-    for (let i = 0; i < superdeck.length; i++) {
-        var nom_mem = superdeck[i].deck;
-        deck = [];
-        //console.log("deck :");
+			for (let i = 0; i < superdeck.length; i++) {
+				var nom_mem = superdeck[i].deck;
+				deck = [];
+				//console.log("deck :");
 
-        for (let j = 0; j < superdeck.length; j++) {
-            var nom = superdeck[j].deck;
+				for (let j = 0; j < superdeck.length; j++) {
+					var nom = superdeck[j].deck;
 
-            if (nom_mem == nom) {
-                //console.log("add");
-                deck.push(superdeck[j])
-            }
-        }
+					if (nom_mem == nom) {
+						//console.log("add");
+						deck.push(superdeck[j]);
+					}
+				}
 
-        //console.log(deck);
-        var onoff = true;
+				//console.log(deck);
+				var onoff = true;
 
-        for (let i = 0; i < memdeck.length; i++) {
-            if (memdeck[i][0].deck == deck[0].deck){
-                //console.log("oui");
-                onoff = false;
-            }
-        }
+				for (let i = 0; i < memdeck.length; i++) {
+					if (memdeck[i][0].deck == deck[0].deck) {
+						//console.log("oui");
+						onoff = false;
+					}
+				}
 
-        if (onoff) {
-            memdeck.push(deck);
-        }
+				if (onoff) {
+					memdeck.push(deck);
+				}
 
-        //console.log(memdeck);
-
-    }
+				//console.log(memdeck);
+			}
+		}
 
     //console.log(memdeck.length)
     for (let i = 0; i < memdeck.length; i++) {
@@ -357,21 +358,23 @@ function loadingdeck(x, nom, nbr) {
 
 
 function modescreen(params) {
-    yugi = params;
-    yo = 0;
-    duel = params;
-    selected = true;
+    if (ingame) {
+        yugi = params;
+        yo = 0;
+        duel = params;
+        selected = true;
 
-    //console.log(memdeck[params]);
-    //console.log(yugi);
-    //console.log(screen);
+        //console.log(memdeck[params]);
+        //console.log(yugi);
+        //console.log(screen);
 
-    if (!screen) {
-        flop();
-        affichage(yugi, yo);
-    }
-    if (screen) {
-        splash();
+        if (!screen) {
+            flop();
+            affichage(yugi, yo);
+        }
+        if (screen) {
+            splash();
+        }
     }
 }
 
@@ -445,6 +448,7 @@ function pathfinder(param) {
 }
 
 function play() {
+    document.getElementById.style = ""
     resultat = 0;
     bdv.style.width = "100%";
     battle = 1;
@@ -520,7 +524,7 @@ function antiplay(params) {
 }
 
 //////////////////pomodoro////////////////
-const deg = 6;
+/*const deg = 6;
 const h = document.querySelector(".h");
 const m = document.querySelector(".m");
 const s = document.querySelector(".s");
@@ -538,7 +542,7 @@ setInterval(() => {
 	h.style.transform = `rotateZ(${hh + mm / 12}deg)`;
 	m.style.transform = `rotateZ(${mm + ss / 60}deg)`;
 	s.style.transform = `rotateZ(${ss}deg)`;
-}, 1000);
+}, 1000);*/
 
 
 function pomodoro(params) {

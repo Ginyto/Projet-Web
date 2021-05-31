@@ -168,8 +168,9 @@
     display: flex;
     font-size: 80px;
     padding: 30px;
-    width: min-content 90px;
-    height:min-content 100px;
+    min-width: 90px;
+    min-height: 100px;
+    height: fit-content;
     border:#282A36 solid 4px;
     background-color: #1b1d24;
     margin: 15px;
@@ -204,7 +205,7 @@
 }
 
 
-.saisie{
+.psaisie{
     text-align: center;
     color: coral;
     font-size: 15px;

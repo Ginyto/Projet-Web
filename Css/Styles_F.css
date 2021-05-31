@@ -333,3 +333,64 @@
     margin: 28px;
 }
 
+.pomodoro{
+    display: flex;
+    font-size: 80px;
+    padding: 30px;
+    width: min-content 90px;
+    height:min-content 100px;
+    border:#282A36 solid 4px;
+    background-color: #1b1d24;
+    margin: 15px;
+    color: coral;
+    border-radius: 10%;
+    box-shadow: 0 -15px 15px rgba(255, 255, 255, 0.05),
+                inset 0 -15px 15px rgba(255, 255, 255, 0.05),
+                0 15px 15px rgba(0, 0, 0, 0.3),
+                inset 0 15px 15px rgba(0, 0, 0, 0.3);
+}
+
+.pp{
+    background-color: #1b1d24;
+    min-width: 270;
+    min-height: 170;
+    border-radius: 12%;
+}
+
+#tiempo{
+    background-color: #1b1d24;
+    border-radius: 15%;
+    max-width: 170px;
+    max-height: 70px;
+    font-size: 40px;
+}
+
+#pbtn{
+    max-width: 120px;
+    max-height: 70px;
+    font-size: 17px;
+    margin: 15px;
+}
+
+
+.psaisie{
+    text-align: center;
+    color: coral;
+    font-size: 15px;
+    background-color: #1b1d24;
+    border:#282A36 solid 4px;
+    border-radius: 12%;
+    box-shadow: 0 -15px 15px rgba(255, 255, 255, 0.05),
+                inset 0 -15px 15px rgba(255, 255, 255, 0.05),
+                0 15px 15px rgba(0, 0, 0, 0.3),
+                inset 0 15px 15px rgba(0, 0, 0, 0.3);
+    margin: 15px;
+}
+
+.rolex{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: fit-content;
+    width: fit-content;
+}
