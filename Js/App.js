@@ -148,11 +148,16 @@ function addcard() {
     def.value = "";
     num.textContent = "No." + (deck.length+ 2);
     cmaindeck.children.item(2).textContent = deck.length + 1;
-    deck.push(carte);
+    
 
-    if (yugi) {
+    if (selected) {
+        console.log("yeah")
         memdeck[yugi].push(carte);
+        console.log(memdeck);
         upload();
+    }
+    else {
+        deck.push(carte);
     }
 
     //console.log(yugi);
@@ -180,7 +185,7 @@ function delatecard(params) {
         console.log(memdeck[yugi]);
 
         upload();
-        affichage(yugi, yo - 1);
+        window.location.reload();
     }
 
 }
@@ -218,6 +223,24 @@ function creadeck() {
     upload();
     console.log(cmaindeck);
 
+}
+
+function delatedeck(params) {
+    
+    var del = memdeck[yugi][yo].deck;
+    console.log(del);
+
+    if (window.confirm("Voulez vous vraiment supprimer le deck ?")) {
+        for (let index = 0; index < localStorage.length; index++) {
+            const element = localStorage.getItem(index);
+			if (del == element.split("/")[0]) {
+                localStorage.removeItem(index);
+            }
+        }
+        
+        memdeck.slice(yugi, 1);
+        window.location.reload();
+    }
 }
 
 function resetcreadeck() {
