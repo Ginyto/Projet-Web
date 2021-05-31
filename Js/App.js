@@ -20,10 +20,12 @@ var maindeck = document.querySelector(".maindeck");
 var deckzone = document.getElementById("deckzone");
 var bzone = document.getElementById("bzone");
 var startzone = document.getElementById("mario");
+var set = document.getElementById("set");
 
 duel = 666;
 selected = false;
 battle = 1;
+
 
 
 
@@ -319,16 +321,27 @@ function loadingdeck(x, nom, nbr) {
 
 
 function modescreen(params) {
-    flop();
     yugi = params;
     yo = 0;
     duel = params;
     selected = true;
 
     //console.log(memdeck[params]);
+    console.log(yugi);
+    console.log(screen);
 
-    affichage(yugi, yo);
-    
+    if (!screen) {
+        flop();
+        affichage(yugi, yo);
+    }
+    if (screen) {
+        splash();
+    }
+}
+
+function splash(params) {
+    set.children.item(0).textContent = "Gianlucca";
+    console.log(set.children.item(0));
 }
 
 function affichage(x, y) {

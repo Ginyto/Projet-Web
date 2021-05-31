@@ -46,6 +46,7 @@
     align-self: center;
     flex-direction: column;
     justify-content: space-around;
+    border-radius: 10%;
     margin-top: 15px;
     box-shadow: 0 -15px 15px rgba(255, 255, 255, 0.05),
                 inset 0 -15px 15px rgba(255, 255, 255, 0.05),

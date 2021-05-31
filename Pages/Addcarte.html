@@ -30,16 +30,16 @@
 
     <div class="flexzone">
 
-        <form class="creadeck">
+        <form class="creadeck" id="set">
             
-            <input type="text" id="decknom" class="saisie" placeholder="écrivez le nom de votre deck">
+            <input type="text" id="decknom" class="saisie" placeholder="écrivez le nom de votre deck" required="">
 
             <h2 class="titulo"><p id="num">No.1</p>
                 Question
             </h2>
-            <input type="text" class="saisie" id="terme" placeholder="écrivez votre question">
+            <input type="text" class="saisie" id="terme" placeholder="écrivez votre question" required="">
             <h2 class="titulo">Réponse</h2>
-            <input type="text" class="saisie" id="def" placeholder="écrivez votre réponse">
+            <input type="text" class="saisie" id="def" placeholder="écrivez votre réponse" required="">
         </form>
 
         <div class="bouton_zone">
@@ -73,7 +73,7 @@
 
     </div>
 
-
+    <script>screen = true</script>
     <script src="/Js/App.js"></script>
 </body>
 
