@@ -18,7 +18,6 @@ var num = document.getElementById("num");
 var deckname = document.getElementById("decknom");
 var maindeck = document.querySelector(".maindeck");
 var deckzone = document.getElementById("deckzone");
-var world = -1;
 var bzone = document.getElementById("bzone");
 var startzone = document.getElementById("mario");
 
@@ -120,6 +119,20 @@ function nuevoclick(param,path) {
     param.setAttribute("onclick",path);
 }
 
+function upload(params) {
+    localStorage.clear();
+    var id = 0;
+    for (let i = 0; i < memdeck.length; i++) {
+        for (let j = 0; j < memdeck[i].length; j++) {
+            const element = memdeck[i][j];
+            localStorage.setItem(id, (element.deck + '/' + element.recto + '/' + element.verso + '/' + element.check));
+            //console.log(id, (element.deck+'/'+element.recto+'/'+element.verso+'/'+element.check));
+            //console.log(element+id);
+            id++;
+        }
+    }
+}
+
 /**
  * Ajout de carte de maniere dynamique
  */
@@ -134,20 +147,33 @@ function addcard() {
     def.value = "";
     num.textContent = "No." + (deck.length+ 2);
     maindeck.children.item(2).textContent = deck.length + 1;
-    console.log("world : "+world)
-    localStorage.setItem(world, (carte.deck+'/'+carte.recto+'/'+carte.verso+'/'+carte.check));
+    upload();
     deck.push(carte);
-    world++;
 }
 
 function delatecard(params) {
     console.log(memdeck[yugi][yo]);
-    window.confirm("Voulez vous vraiment supprimer la carte ?");
-    console.log("Yes");
-    document.getElementById(yugi).children.item(2).textContent = memdeck[yugi].length - 1;
-    memdeck[yugi].splice(yo,1);
-    console.log(memdeck[yugi]);
+
+    var del = memdeck[yugi][yo].recto;
+
+    console.log(del);
+
+    if (window.confirm("Voulez vous vraiment supprimer la carte ?")) {
+        for (let index = 0; index < localStorage.length; index++) {
+            const element = localStorage.getItem(index);
+			if (del == element.split("/")[1]) {
+                console.log("je supprime cette carte du cloud : " + element.split("/")[1] + " id : " + index);
+                localStorage.removeItem(index);
+            }
+		}
     
+        //console.log("Yes");
+        document.getElementById(yugi).children.item(2).textContent = memdeck[yugi].length - 1;
+        memdeck[yugi].splice(yo,1);
+        console.log(memdeck[yugi]);
+
+        upload();
+    }
 
 }
 
@@ -201,8 +227,9 @@ function download(x) {
 
     var superdeck = [];
 
-    for (let i = 1; i <= localStorage.length; i++) {
-		
+    
+
+    for (let i = 0; i <= localStorage.length-1; i++) {
 		var carte = new Flash(
 		localStorage.getItem(i).split("/")[1],
 		localStorage.getItem(i).split("/")[2],
@@ -257,7 +284,6 @@ function download(x) {
 
     if (x == true) {
 		loadingdeck(memdeck.length, "Nom du deck", "Nombre de cartes");
-		world = memdeck.length + 1;
 		deck = [];
 	}
 }
