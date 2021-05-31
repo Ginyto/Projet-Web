@@ -12,7 +12,7 @@ const barre = document.querySelector(".bardevie");
 const zone_bouton = document.querySelector(".bouton_zone");
 var terme = document.getElementById("terme");
 var def = document.getElementById("def");
-var deck = [];
+deck = [];
 var memdeck = [];
 var num = document.getElementById("num");
 var deckname = document.getElementById("decknom");
@@ -134,23 +134,28 @@ function upload(params) {
         }
     }
 }
-
 /**
  * Ajout de carte de maniere dynamique
  */
 function addcard() {
-    var maindeck = document.getElementById(memdeck.length);
-    console.log(maindeck);
+    console.log(cmaindeck);
+
     var carte = new Flash(terme.value, def.value, false, deckname.value);
 
     deckname.style = "border: #282A36";
-    maindeck.children.item(1).textContent = carte.deck;
+    cmaindeck.children.item(1).textContent = carte.deck;
     terme.value = "";
     def.value = "";
     num.textContent = "No." + (deck.length+ 2);
-    maindeck.children.item(2).textContent = deck.length + 1;
-    upload();
+    cmaindeck.children.item(2).textContent = deck.length + 1;
     deck.push(carte);
+
+    if (yugi) {
+        memdeck[yugi].push(carte);
+        upload();
+    }
+
+    //console.log(yugi);
 }
 
 function delatecard(params) {
@@ -175,6 +180,7 @@ function delatecard(params) {
         console.log(memdeck[yugi]);
 
         upload();
+        affichage(yugi, yo - 1);
     }
 
 }
@@ -189,7 +195,7 @@ function creadeck() {
     var newdeck = document.createElement("div");
     console.log(memdeck.length);
     nuevo(newdeck, "maindeck", memdeck.length);
-    nuevoclick(newdeck,"selecdeck("+memdeck.length+")");
+    nuevoclick(newdeck,"modescreen("+memdeck.length+")");
     deckzone.appendChild(newdeck);
 
     var no = document.createElement("div");
@@ -207,6 +213,10 @@ function creadeck() {
     newdeck.appendChild(no);
     newdeck.appendChild(nomdeck);
     newdeck.appendChild(countdeck);
+
+    cmaindeck = document.getElementById(memdeck.length);
+    upload();
+    console.log(cmaindeck);
 
 }
 
@@ -287,7 +297,10 @@ function download(x) {
     if (x == true) {
 		loadingdeck(memdeck.length, "Nom du deck", "Nombre de cartes");
 		deck = [];
-	}
+    }
+    
+    cmaindeck = document.getElementById(memdeck.length);
+    console.log(cmaindeck);
 }
 
 function loadingdeck(x, nom, nbr) {
@@ -327,8 +340,8 @@ function modescreen(params) {
     selected = true;
 
     //console.log(memdeck[params]);
-    console.log(yugi);
-    console.log(screen);
+    //console.log(yugi);
+    //console.log(screen);
 
     if (!screen) {
         flop();
@@ -340,8 +353,20 @@ function modescreen(params) {
 }
 
 function splash(params) {
-    set.children.item(0).textContent = "Gianlucca";
-    console.log(set.children.item(0));
+    //console.log(yugi);
+    if (yugi == memdeck.length) {
+        set.children.item(0).value = "";
+    }
+    if (yugi < memdeck.length) {
+        set.children.item(0).value = memdeck[yugi][0].deck;
+    }
+
+    num.textContent = "No." + (memdeck[yugi].length+1);
+    //console.log(set.children.item(0));
+
+    cmaindeck = document.getElementById(yugi);
+    deck = memdeck[yugi]
+    //console.log(cmaindeck);
 }
 
 function affichage(x, y) {
