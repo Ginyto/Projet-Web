@@ -325,6 +325,8 @@ function download(x) {
     
     cmaindeck = document.getElementById(memdeck.length);
     console.log(cmaindeck);
+
+    pomodoro();
 }
 
 function loadingdeck(x, nom, nbr) {
@@ -524,7 +526,7 @@ function antiplay(params) {
 }
 
 //////////////////pomodoro////////////////
-/*const deg = 6;
+const deg = 6;
 const h = document.querySelector(".h");
 const m = document.querySelector(".m");
 const s = document.querySelector(".s");
@@ -542,48 +544,68 @@ setInterval(() => {
 	h.style.transform = `rotateZ(${hh + mm / 12}deg)`;
 	m.style.transform = `rotateZ(${mm + ss / 60}deg)`;
 	s.style.transform = `rotateZ(${ss}deg)`;
-}, 1000);*/
+}, 1000);
 
+//sessionStorage.clear()
 
 function pomodoro(params) {
-    var chrono = (document.getElementById("tiempo").value - 1);
-    var pomo = document.getElementById("pomo");
-    var sec = 2;
-    console.log(chrono);
+    console.log(tempus);
 
-    if (chrono >= 0) {
-        setInterval(function () {
-			if (chrono == 0 && sec == 0) {
+    if (tempus) {
+        var chrono = (document.getElementById("tiempo").value - 1);
+        sessionStorage.setItem("min", chrono);
+        console.log("yes");
+    }
+
+    var pomo = document.getElementById("pomo");
+
+    var sec = 59;
+    
+    console.log(chrono);
+    console.log(sessionStorage.getItem("min"));
+
+
+    if (sessionStorage.getItem("min") >= 0) {
+        timer = setInterval(function () {
+            chrono = sessionStorage.getItem("min");
+            sessionStorage.setItem("min", chrono);
+            sessionStorage.setItem("sec", sec);
+            console.log(sec);
+
+            if (sessionStorage.getItem("min") == 0 && sec == 0) {
+                console.log("oep");
                 if (window.confirm("T'as bien bossé ! Est ce que tu veux prendre ta pause de 20 mins ?")) {
-                    clearInterval((chrono = 20, sec = 5));
+                    sessionStorage.setItem("min", 20), sessionStorage.setItem("sec", 59);
+                    sec = 59;
                 }
                 else {
-                    clearInterval(chrono = 0, sec = 0);
-                    window.location.reload();
+                    sessionStorage.setItem("min", 0), sessionStorage.setItem("sec", 0)
+                    clearInterval(timer);
                 }
             }
             
-            if (chrono < 10) {
-                pomo.children.item(0).textContent = "0" + chrono;
+            if (sessionStorage.getItem("min") < 10) {
+                pomo.children.item(0).textContent = "0" + sessionStorage.getItem("min");
                 
             }
             else {
-                pomo.children.item(0).textContent = 0 + chrono;
+                pomo.children.item(0).textContent = sessionStorage.getItem("min");
             }
 
-            if (sec < 10) {
-                pomo.children.item(2).textContent = "0" + sec;
-                pomo.children.item(2).transform = "rotateY(180deg)";
+            if (sessionStorage.getItem("sec") < 10) {
+                pomo.children.item(2).textContent = "0" + sessionStorage.getItem("sec");
             }
             else {
-                pomo.children.item(2).textContent = sec;
+                pomo.children.item(2).textContent = sessionStorage.getItem("sec");
             }
 
 			sec--;
-			if (sec == 0 && chrono != 0) {
-                chrono--;
-                sec = 59;
+            if (sec == 0 && sessionStorage.getItem("min") != 0) {
+                chrono--
+				sessionStorage.setItem("min",chrono);
+				sec = 59;
 			}
+            
 		}, 1000);
     }
 }
