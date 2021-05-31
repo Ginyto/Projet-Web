@@ -107,19 +107,21 @@
 
 .bouton_zone{
     display: flex;
-    width: 300px;
+    width: fit-content;
     height: fit-content;
     margin-top: 25px;
     flex-wrap: wrap;
-    justify-content: space-between;
     display: none;
 
 }
 
 #compteur{
     display: flex;
+    width: fit-content;
+    height: fit-content;
     align-items: center;
-    padding: 20px;
+    align-self: center;
+    padding: 15px;
     border-radius: 12%;
     border: #282A36 solid;
     width: fit-content;
