@@ -34,28 +34,39 @@
     height: 100%;
     width: 100%;
     align-items: center;
-    flex-direction: column;
     justify-content: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
 }
 
 .bouton_zone{
     display: flex;
-    width: 300px;
+    width: fit-content;
     height: fit-content;
     justify-content: space-around;
-    margin-top: 25px;
-    flex-wrap: wrap;   
-    flex-direction: row;
+    flex-wrap: wrap;
 }
 
 .boutons{
-
     padding: 20px;
     border-radius: 12%;
-    border: #282A36 solid;
     width: 100px;
-    background-color: coral;
+    height: 70px;
+    color: coral;
+    background-color: #1b1d24;
     text-align: center;
+
+    border: #282A36 4px solid;
+    box-shadow: 0 -15px 15px rgba(255, 255, 255, 0.05),
+                inset 0 -15px 15px rgba(255, 255, 255, 0.05),
+                0 15px 15px rgba(0, 0, 0, 0.3),
+                inset 0 15px 15px rgba(0, 0, 0, 0.3);
+                
+}
+
+#pbtn{
+    width: fit-content;
+    font-size: 15px;
 }
 
 
@@ -68,13 +79,16 @@
 .reloj{
     width: 350px;
     height: 350px;
+    width: min-content 350px;
+    height: min-content 350px;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 15px;
     background: url(/horloge.png);
     background-size: cover;
     border-radius: 20%;
-    border:#282A36 4px solid;
+    border:#282A36 1px solid;
     box-shadow: 0 -15px 15px rgba(255, 255, 255, 0.05),
                 inset 0 -15px 15px rgba(255, 255, 255, 0.05),
                 0 15px 15px rgba(0, 0, 0, 0.3),
@@ -149,6 +163,61 @@
     z-index: 1;
     border-radius: 6px 6px 0 0;
 }
+
+.pomodoro{
+    display: flex;
+    font-size: 80px;
+    padding: 30px;
+    width: min-content 90px;
+    height:min-content 100px;
+    border:#282A36 solid 4px;
+    background-color: #1b1d24;
+    margin: 15px;
+    color: coral;
+    border-radius: 10%;
+    box-shadow: 0 -15px 15px rgba(255, 255, 255, 0.05),
+                inset 0 -15px 15px rgba(255, 255, 255, 0.05),
+                0 15px 15px rgba(0, 0, 0, 0.3),
+                inset 0 15px 15px rgba(0, 0, 0, 0.3);
+}
+
+.pp{
+    background-color: #1b1d24;
+    min-width: 270;
+    min-height: 170;
+    border-radius: 12%;
+}
+
+#tiempo{
+    background-color: #1b1d24;
+    border-radius: 15%;
+    max-width: 170px;
+    max-height: 70px;
+    font-size: 40px;
+}
+
+#pbtn{
+    max-width: 120px;
+    max-height: 70px;
+    font-size: 17px;
+    margin: 15px;
+}
+
+
+.saisie{
+    text-align: center;
+    color: coral;
+    font-size: 15px;
+    background-color: #1b1d24;
+    border:#282A36 solid 4px;
+    border-radius: 12%;
+    box-shadow: 0 -15px 15px rgba(255, 255, 255, 0.05),
+                inset 0 -15px 15px rgba(255, 255, 255, 0.05),
+                0 15px 15px rgba(0, 0, 0, 0.3),
+                inset 0 15px 15px rgba(0, 0, 0, 0.3);
+    margin: 15px;
+}
+
 
 
 

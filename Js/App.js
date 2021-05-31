@@ -520,7 +520,7 @@ function antiplay(params) {
 }
 
 //////////////////pomodoro////////////////
-/*const deg = 6;
+const deg = 6;
 const h = document.querySelector(".h");
 const m = document.querySelector(".m");
 const s = document.querySelector(".s");
@@ -538,6 +538,50 @@ setInterval(() => {
 	h.style.transform = `rotateZ(${hh + mm / 12}deg)`;
 	m.style.transform = `rotateZ(${mm + ss / 60}deg)`;
 	s.style.transform = `rotateZ(${ss}deg)`;
-});*/
+}, 1000);
+
+
+function pomodoro(params) {
+    var chrono = (document.getElementById("tiempo").value - 1);
+    var pomo = document.getElementById("pomo");
+    var sec = 2;
+    console.log(chrono);
+
+    if (chrono >= 0) {
+        setInterval(function () {
+			if (chrono == 0 && sec == 0) {
+                if (window.confirm("T'as bien bossé ! Est ce que tu veux prendre ta pause de 20 mins ?")) {
+                    clearInterval((chrono = 20, sec = 5));
+                }
+                else {
+                    clearInterval(chrono = 0, sec = 0);
+                    window.location.reload();
+                }
+            }
+            
+            if (chrono < 10) {
+                pomo.children.item(0).textContent = "0" + chrono;
+                
+            }
+            else {
+                pomo.children.item(0).textContent = 0 + chrono;
+            }
+
+            if (sec < 10) {
+                pomo.children.item(2).textContent = "0" + sec;
+                pomo.children.item(2).transform = "rotateY(180deg)";
+            }
+            else {
+                pomo.children.item(2).textContent = sec;
+            }
+
+			sec--;
+			if (sec == 0 && chrono != 0) {
+                chrono--;
+                sec = 59;
+			}
+		}, 1000);
+    }
+}
 
 
