@@ -577,7 +577,7 @@ function pomodoro(params) {
             if (sessionStorage.getItem("min") == 0 && sec == 0) {
                 console.log("oep");
                 if (window.confirm("T'as bien bossé ! Est ce que tu veux prendre ta pause de 20 mins ?")) {
-                    sessionStorage.setItem("min", 20), sessionStorage.setItem("sec", 59);
+                    sessionStorage.setItem("min", 19), sessionStorage.setItem("sec", 59);
                     sec = 59;
                 }
                 else {

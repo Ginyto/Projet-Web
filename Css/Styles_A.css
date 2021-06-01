@@ -28,25 +28,39 @@
     transform: scale(1.3);
 }
 
-.flexzone{
+.flexbox{
     display: flex;
-    position: absolute;
+    flex-wrap: wrap;
     height: 100%;
     width: 100%;
+    min-width: fit-content;
+    min-height: 100vh;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.flexzone{
+    display: flex;
+    height: fit-content;
+    min-height: 600px;
+    width: fit-content;
+    align-items: center;
+    justify-content: center;
     flex-direction: column;
 }
 
 .creadeck{
     display: flex;
     width: 500px;
-    height: 200px;
+    height: 300px;
     border: coral solid 4px;
     background-color: #1b1d24;
+    padding: 25px;
     align-self: center;
     flex-direction: column;
     justify-content: space-around;
     border-radius: 10%;
-    margin-top: 15px;
+    margin: 20px;
     box-shadow: 0 -15px 15px rgba(255, 255, 255, 0.05),
                 inset 0 -15px 15px rgba(255, 255, 255, 0.05),
                 0 15px 15px rgba(0, 0, 0, 0.3),
@@ -94,9 +108,19 @@
 .boutons{
     padding: 20px;
     border-radius: 12%;
-    border: #282A36 solid;
-    width: 115px;
-    background-color: coral;
+    width: 100px;
+    height: 70px;
+    color: coral;
+    background-color: #1b1d24;
+    text-align: center;
+    margin: 15px;
+
+    border: #282A36 4px solid;
+    box-shadow: 0 -15px 15px rgba(255, 255, 255, 0.05),
+                inset 0 -15px 15px rgba(255, 255, 255, 0.05),
+                0 15px 15px rgba(0, 0, 0, 0.3),
+                inset 0 15px 15px rgba(0, 0, 0, 0.3);
+                
 }
 
 .boutons:hover{
@@ -108,21 +132,27 @@
 .deck_zone{
     display: flex;
     justify-content: center;
-    margin-top: 100px;
+    height:fit-content;
+    width: 400px;
     flex-wrap: wrap;
-    height: fit-content;
 }
 
 .maindeck{
     display: flex;
     width: 100px;
     height: 100px;
-    border: #FF79C6 1px solid;
-    background-color: #FF79C6;
+    border: #FF79C6 4px solid;
+    background-color: #1b1d24;
+    padding: 20px;
     flex-direction: column;
     justify-content: space-around;
     border-radius: 11%;
-    margin: 10px;
+    margin: 25px;
+    border:#1b1d24 4px solid;
+    box-shadow: 0 -15px 15px rgba(255, 255, 255, 0.05),
+                inset 0 -15px 15px rgba(255, 255, 255, 0.05),
+                0 15px 15px rgba(0, 0, 0, 0.3),
+                inset 0 15px 15px rgba(0, 0, 0, 0.3);
 }
 
 .maindeck:hover{
@@ -132,8 +162,158 @@
 }
 
 .infodeck{
-    background-color: #FF79C6;
+    color: #FF79C6;
     text-align: center;
+    background-color: #1b1d24;
+    border-radius: 12%;
+} 
+.reloj{
+    width: 250px;
+    height: 250px;
+    min-width: fit-content;
+    min-height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url(/horloge.png);
+    background-size: cover;
+    border-radius: 20%;
+    border:#282A36 4px solid;
+    box-shadow: 0 -15px 15px rgba(255, 255, 255, 0.05),
+                inset 0 -15px 15px rgba(255, 255, 255, 0.05),
+                0 15px 15px rgba(0, 0, 0, 0.3),
+                inset 0 15px 15px rgba(0, 0, 0, 0.3);
 }
 
+.reloj:before{
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: #fff;
+    border-radius: 50%;
+    z-index: 10000;
+}
+
+.h{
+    width: 8px;
+    height: 70px;
+    position: absolute;
+}
+
+.m{
+    width: 4px;
+    height: 130px;
+    position: absolute;
+}
+
+.s{
+    width: 2px;
+    height: 140px;
+    position: absolute;
+}
+
+.h, .m, .s{
+    display: flex;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.h::before{
+    content: '';
+    position: absolute;
+    width: 6px;
+    height: 30px;
+    background:#FF79C6;
+    z-index: 11;
+    border-radius: 6px 6px 0 0;
+
+}
+
+.m::before{
+    content: '';
+    position: absolute;
+    width: 4px;
+    height: 70px;
+    background: coral;
+    z-index: 12;
+    border-radius: 6px 6px 0 0;
+}
+
+.s::before{
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 100px;
+    background: cyan;
+    z-index: 13;
+    border-radius: 6px 6px 0 0;
+}
+
+.reloj{
+    margin: 28px;
+}
+
+.pomodoro{
+    display: flex;
+    font-size: 80px;
+    padding: 30px;
+    width: min-content 90px;
+    height:min-content 100px;
+    border:#282A36 solid 4px;
+    background-color: #1b1d24;
+    margin: 15px;
+    color: coral;
+    border-radius: 10%;
+    box-shadow: 0 -15px 15px rgba(255, 255, 255, 0.05),
+                inset 0 -15px 15px rgba(255, 255, 255, 0.05),
+                0 15px 15px rgba(0, 0, 0, 0.3),
+                inset 0 15px 15px rgba(0, 0, 0, 0.3);
+}
+
+.pp{
+    background-color: #1b1d24;
+    min-width: 270;
+    min-height: 170;
+    border-radius: 12%;
+}
+
+#tiempo{
+    background-color: #1b1d24;
+    border-radius: 15%;
+    max-width: 170px;
+    max-height: 70px;
+    font-size: 40px;
+}
+
+#pbtn{
+    max-width: 120px;
+    max-height: 70px;
+    font-size: 17px;
+    margin: 15px;
+}
+
+
+.psaisie{
+    text-align: center;
+    color: coral;
+    font-size: 15px;
+    background-color: #1b1d24;
+    border:#282A36 solid 4px;
+    border-radius: 12%;
+    box-shadow: 0 -15px 15px rgba(255, 255, 255, 0.05),
+                inset 0 -15px 15px rgba(255, 255, 255, 0.05),
+                0 15px 15px rgba(0, 0, 0, 0.3),
+                inset 0 15px 15px rgba(0, 0, 0, 0.3);
+    margin: 15px;
+}
+
+.rolex{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: fit-content;
+    width: fit-content;
+}
 

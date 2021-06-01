@@ -18,7 +18,7 @@
 <header class="ciel">
     <h1 class="titre">Création de Deck</h1>
     <nav class="menu">
-        <div class="choice" onclick="pathfinder(0)">Accceuil</div>
+        <div class="choice" onclick="pathfinder(0)">Accueil</div>
         <div class="choice" onclick="pathfinder(1)">Flashcardo</div>
         <div class="choice" onclick="pathfinder(2)">Création de deck</div>
         <div class="choice" onclick="pathfinder(3)">Gestionnaire de Deck</div>
@@ -28,37 +28,65 @@
 
 <body onload="download(true)">
 
-    <div class="flexzone" id="flexzone">
+    <div class="flexbox">
+        
+        <div class="rolex">
+                <div class="reloj">
+                
+                
+                    <div class="h" id="h"></div>
+                
+                
+                    <div class="m" id="m"></div>
+                
+                
+                    <div class="s" id="s"></div>
+                
+                
+                </div>
+                
+                <div class="pomodoro" id="pomo">
+                    <div class="pp" id="pmin">00</div>
+                    <div class="pp" id="dp">:</div>
+                    <div class="pp" id="psec">00</div>
+                </div>
+        </div>
 
-        <form class="creadeck" id="set">
-            
-            <input type="text" id="decknom" class="saisie" placeholder="écrivez le nom de votre deck" required="">
+        
 
-            <h2 class="titulo"><p id="num">No.1</p>
-                Question
-            </h2>
-            <input type="text" class="saisie" id="terme" placeholder="écrivez votre question" required="">
-            <h2 class="titulo">Réponse</h2>
-            <input type="text" class="saisie" id="def" placeholder="écrivez votre réponse" required="">
-        </form>
+        <div class="flexzone">
 
-        <div class="bouton_zone">
-            <div class="add">
-                <button type="submit" class="boutons" onclick="addcard()">
-                    Ajouter
-                </button>
-            </div>
+            <form class="creadeck" id="set">
+                
+                <input type="text" id="decknom" class="saisie" placeholder="écrivez le nom de votre deck" required="">
 
-            <div class="add">
-                <button type="submit" class="boutons" onclick="resetcreadeck()">
-                    Fin de Deck
-                </button>
-            </div>
+                <h2 class="titulo"><p id="num">No.1</p>
+                    Question
+                </h2>
+                <input type="text" class="saisie" id="terme" placeholder="écrivez votre question" required="">
+                <h2 class="titulo">Réponse</h2>
+                <input type="text" class="saisie" id="def" placeholder="écrivez votre réponse" required="">
+            </form>
 
-            <div class="switch">
-                <button type="submit" class="boutons" onclick="pathfinder(3)">
-                    Gestionnaire
-                </button>
+            <div class="bouton_zone">
+                <div class="add">
+                    <button type="submit" class="boutons" onclick="addcard()">
+                        Ajouter
+                    </button>
+                </div>
+
+                <div class="add">
+                    <button type="submit" class="boutons" onclick="resetcreadeck()">
+                        Fin de Deck
+                    </button>
+                </div>
+
+                <div class="switch">
+                    <button type="submit" class="boutons" onclick="pathfinder(3)">
+                        Decks
+                    </button>
+                </div>
+
             </div>
 
         </div>
@@ -71,9 +99,16 @@
             </div>
         </div>
 
+        
+
+
     </div>
 
-    <script>screen = true</script>
+
+    <script>
+        screen = false;
+        tempus = false;
+    </script>
     <script src="/Js/App.js"></script>
 </body>
 
