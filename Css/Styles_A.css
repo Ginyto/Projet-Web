@@ -42,8 +42,9 @@
 .flexzone{
     display: flex;
     height: fit-content;
-    min-height: 600px;
+    min-height: fit-content;
     width: fit-content;
+    min-width: fit-content;
     align-items: center;
     justify-content: center;
     flex-direction: column;
@@ -60,6 +61,8 @@
     display: flex;
     width: 500px;
     height: 300px;
+    min-width: fit-content;
+    min-height: fit-content;
     border: coral solid 4px;
     background-color: #1b1d24;
     padding: 35px;
