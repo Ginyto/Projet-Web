@@ -55,7 +55,8 @@
 .flexbox{
     display: flex;
     flex-wrap: wrap;
-    height: 100vh;
+    height: fit-content;
+    min-height: 88vh;
     justify-content: space-evenly;
     align-items: center;
 }

@@ -61,12 +61,19 @@ footer{
     justify-content: space-between;
 }
 
+.flexbox{
+    display: flex;
+    flex-wrap: wrap;
+    height: fit-content;
+    min-height: 88vh;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
 
 .flexzone{
     position: absolute;
     display: flex;
-    height: 100%;
-    width: 100%;
     align-items: center;
     justify-content: center;
     justify-content: space-around;
