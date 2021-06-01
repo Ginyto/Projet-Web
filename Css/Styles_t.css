@@ -6,6 +6,41 @@
     font-family: 'Roboto', sans-serif;
 }
 
+
+.explication{
+    color: #F8F8F2;
+    font-size: 25px;
+    min-width: fit-content;
+    min-height: fit-content;
+    width: 1200px;
+    padding: 25px;
+    margin: 15px;
+    border-radius: 5%;
+    border:#282A36 4px solid;
+    box-shadow: 0 -15px 15px rgba(255, 255, 255, 0.05),
+                inset 0 -15px 15px rgba(255, 255, 255, 0.05),
+                0 15px 15px rgba(0, 0, 0, 0.3),
+                inset 0 15px 15px rgba(0, 0, 0, 0.3);
+}
+
+
+#intro{
+    width: fit-content;
+}
+
+#exflash, #expomo{
+    font-size: 16px;
+    width: 1300px;
+}
+
+.sublime{
+    border-bottom: coral 1px solid;
+}
+
+.sublime:hover{
+    color: coral;
+}
+
 .ciel{
     display: flex;
     color: #FF79C6;
@@ -14,14 +49,10 @@
     flex-direction: column;
 }
 
-footer{
+#pied{
+    justify-self: center;
+    align-self: flex-end;
     display: flex;
-    position: absolute;
-    width: 200px;
-    height: 20px;
-    bottom: 25px;
-    margin-left: 50%;
-    margin-left: 50%;
     color:#5a5a5d;
     flex-direction: column;
     align-items: center;
@@ -32,24 +63,13 @@ footer{
     width: 500px;
     min-width: fit-content;
     margin-right: 10px;
+    justify-content: space-between;
 }
 
 #apropo{
-    width: 400px;
-    text-align: center;
-    margin-right: 100px;
+    margin-right: 30px;
 }
 
-#apropo:hover{
-    color: coral;
-    transform: none;
-}
-
-.choice:hover{
-    color: #FF79C6;
-    transition: all 0.05s;
-    transform: scale(1.3);
-}
 
 .menu{
     width: 100%;
@@ -61,75 +81,46 @@ footer{
     justify-content: space-between;
 }
 
+.choice{
+    margin: 12px;
+}
+
+.choice:hover{
+    color: #FF79C6;
+    transition: all 0.05s;
+    transform: scale(1.3);
+}
+
 .flexbox{
     display: flex;
     flex-wrap: wrap;
     height: fit-content;
-    min-height: 88vh;
+    min-height: 83vh;
     justify-content: space-evenly;
-    align-items: center;
+    justify-content: center;
 }
-
 
 .flexzone{
-    position: absolute;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    justify-content: space-around;
-    flex-wrap: wrap;
-}
-
-.bouton_zone{
-    display: flex;
-    width: fit-content;
     height: fit-content;
-    justify-content: space-around;
-    flex-wrap: wrap;
-}
-
-.boutons{
-    padding: 20px;
-    border-radius: 12%;
-    width: 100px;
-    height: 70px;
-    color: coral;
-    background-color: #1b1d24;
-    text-align: center;
-
-    border: #282A36 4px solid;
-    box-shadow: 0 -15px 15px rgba(255, 255, 255, 0.05),
-                inset 0 -15px 15px rgba(255, 255, 255, 0.05),
-                0 15px 15px rgba(0, 0, 0, 0.3),
-                inset 0 15px 15px rgba(0, 0, 0, 0.3);
-                
-}
-
-#pbtn{
     width: fit-content;
-    font-size: 15px;
+    align-items: center;
+    flex-direction: column;
 }
 
-
-.boutons:hover{
-    border: #FF79C6 solid;
-    transition: all 0.5s;
-    transform: scale(1.3);
-}
 
 .reloj{
-    width: 350px;
-    height: 350px;
-    width: min-content 350px;
-    height: min-content 350px;
+    width: 262px;
+    height: 262px;
+    width: min-content 150px;
+    height: min-content 150px;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 15px;
     background: url(/horloge.png);
     background-size: cover;
     border-radius: 20%;
-    border:#282A36 1px solid;
+    border:#282A36 4px solid;
     box-shadow: 0 -15px 15px rgba(255, 255, 255, 0.05),
                 inset 0 -15px 15px rgba(255, 255, 255, 0.05),
                 0 15px 15px rgba(0, 0, 0, 0.3),
@@ -139,33 +130,29 @@ footer{
 .reloj:before{
     content: '';
     position: absolute;
-    width: 20px;
-    height: 20px;
+    width: 10px;
+    height: 10px;
     background: #fff;
     border-radius: 50%;
-    z-index: 4;
+    z-index: 10000;
 }
-
-
-
 
 .h{
     width: 8px;
-    height: 150px;
+    height: 70px;
     position: absolute;
 }
 
 .m{
     width: 4px;
-    height: 200px;
+    height: 130px;
     position: absolute;
 }
 
 .s{
     width: 2px;
-    height: 300px;
+    height: 140px;
     position: absolute;
-
 }
 
 .h, .m, .s{
@@ -178,9 +165,9 @@ footer{
     content: '';
     position: absolute;
     width: 6px;
-    height: 80px;
+    height: 30px;
     background:#FF79C6;
-    z-index: 3;
+    z-index: 11;
     border-radius: 6px 6px 0 0;
 
 }
@@ -189,9 +176,9 @@ footer{
     content: '';
     position: absolute;
     width: 4px;
-    height: 100px;
+    height: 70px;
     background: coral;
-    z-index: 2;
+    z-index: 12;
     border-radius: 6px 6px 0 0;
 }
 
@@ -199,19 +186,22 @@ footer{
     content: '';
     position: absolute;
     width: 2px;
-    height: 200px;
+    height: 100px;
     background: cyan;
-    z-index: 1;
+    z-index: 13;
     border-radius: 6px 6px 0 0;
+}
+
+.reloj{
+    margin: 28px;
 }
 
 .pomodoro{
     display: flex;
     font-size: 80px;
     padding: 30px;
-    min-width: 90px;
-    min-height: 100px;
-    height: fit-content;
+    width: min-content 90px;
+    height:min-content 100px;
     border:#282A36 solid 4px;
     background-color: #1b1d24;
     margin: 15px;
@@ -260,6 +250,11 @@ footer{
     margin: 15px;
 }
 
-
-
-
+.rolex{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 600px;
+    width: fit-content;
+}
