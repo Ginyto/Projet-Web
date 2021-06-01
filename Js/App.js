@@ -458,8 +458,8 @@ function precedent() {
     if (yo > 0) {
         yo--;
     }
-    //affichage(yugi, yo);
-    console.log(yo);
+    affichage(yugi, yo);
+    //console.log(yo);
 }
 
 function pathfinder(param) {
