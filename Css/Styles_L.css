@@ -6,6 +6,10 @@
     font-family: 'Roboto', sans-serif;
 }
 
+.explication{
+    color: #F8F8F2;
+}
+
 .ciel{
     display: flex;
     color: #FF79C6;
@@ -61,8 +65,6 @@
     flex-wrap: wrap;
     height: fit-content;
     min-height: 83vh;
-    justify-content: space-evenly;
-    align-items: center;
 }
 
 .flexzone{
