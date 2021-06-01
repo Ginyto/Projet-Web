@@ -1,3 +1,224 @@
 *{
-    background-color: #282A36;
+    padding: 0;
+    margin: 0;
+    background-color:#282A36;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
 }
+
+.ciel{
+    color: #FF79C6;
+    text-align: center;
+    border: #FF79C6 solid 1px;
+
+}
+
+.menu{
+    display: flex;
+    justify-content: center;
+    justify-content: space-around;
+    color: coral;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+}
+
+.choice:hover{
+    color: #FF79C6;
+    transition: all 0.05s;
+    transform: scale(1.3);
+}
+.flexzone{
+    position: absolute;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.bouton_zone{
+    display: flex;
+    width: fit-content;
+    height: fit-content;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.boutons{
+    padding: 20px;
+    border-radius: 12%;
+    width: 100px;
+    height: 70px;
+    color: coral;
+    background-color: #1b1d24;
+    text-align: center;
+
+    border: #282A36 4px solid;
+    box-shadow: 0 -15px 15px rgba(255, 255, 255, 0.05),
+                inset 0 -15px 15px rgba(255, 255, 255, 0.05),
+                0 15px 15px rgba(0, 0, 0, 0.3),
+                inset 0 15px 15px rgba(0, 0, 0, 0.3);
+                
+}
+
+#pbtn{
+    width: fit-content;
+    font-size: 15px;
+}
+
+
+.boutons:hover{
+    border: #FF79C6 solid;
+    transition: all 0.5s;
+    transform: scale(1.3);
+}
+
+.reloj{
+    width: 350px;
+    height: 350px;
+    width: min-content 350px;
+    height: min-content 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px;
+    background: url(/horloge.png);
+    background-size: cover;
+    border-radius: 20%;
+    border:#282A36 1px solid;
+    box-shadow: 0 -15px 15px rgba(255, 255, 255, 0.05),
+                inset 0 -15px 15px rgba(255, 255, 255, 0.05),
+                0 15px 15px rgba(0, 0, 0, 0.3),
+                inset 0 15px 15px rgba(0, 0, 0, 0.3);
+}
+
+.reloj:before{
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #fff;
+    border-radius: 50%;
+    z-index: 4;
+}
+
+
+
+
+.h{
+    width: 8px;
+    height: 150px;
+    position: absolute;
+}
+
+.m{
+    width: 4px;
+    height: 200px;
+    position: absolute;
+}
+
+.s{
+    width: 2px;
+    height: 300px;
+    position: absolute;
+
+}
+
+.h, .m, .s{
+    display: flex;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.h::before{
+    content: '';
+    position: absolute;
+    width: 6px;
+    height: 80px;
+    background:#FF79C6;
+    z-index: 3;
+    border-radius: 6px 6px 0 0;
+
+}
+
+.m::before{
+    content: '';
+    position: absolute;
+    width: 4px;
+    height: 100px;
+    background: coral;
+    z-index: 2;
+    border-radius: 6px 6px 0 0;
+}
+
+.s::before{
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 200px;
+    background: cyan;
+    z-index: 1;
+    border-radius: 6px 6px 0 0;
+}
+
+.pomodoro{
+    display: flex;
+    font-size: 80px;
+    padding: 30px;
+    min-width: 90px;
+    min-height: 100px;
+    height: fit-content;
+    border:#282A36 solid 4px;
+    background-color: #1b1d24;
+    margin: 15px;
+    color: coral;
+    border-radius: 10%;
+    box-shadow: 0 -15px 15px rgba(255, 255, 255, 0.05),
+                inset 0 -15px 15px rgba(255, 255, 255, 0.05),
+                0 15px 15px rgba(0, 0, 0, 0.3),
+                inset 0 15px 15px rgba(0, 0, 0, 0.3);
+}
+
+.pp{
+    background-color: #1b1d24;
+    min-width: 270;
+    min-height: 170;
+    border-radius: 12%;
+}
+
+#tiempo{
+    background-color: #1b1d24;
+    border-radius: 15%;
+    max-width: 170px;
+    max-height: 70px;
+    font-size: 40px;
+}
+
+#pbtn{
+    max-width: 120px;
+    max-height: 70px;
+    font-size: 17px;
+    margin: 15px;
+}
+
+
+.psaisie{
+    text-align: center;
+    color: coral;
+    font-size: 15px;
+    background-color: #1b1d24;
+    border:#282A36 solid 4px;
+    border-radius: 12%;
+    box-shadow: 0 -15px 15px rgba(255, 255, 255, 0.05),
+                inset 0 -15px 15px rgba(255, 255, 255, 0.05),
+                0 15px 15px rgba(0, 0, 0, 0.3),
+                inset 0 15px 15px rgba(0, 0, 0, 0.3);
+    margin: 15px;
+}
+
+
+
+
