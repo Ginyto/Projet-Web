@@ -36,12 +36,6 @@
 }
 
 
-.choice:hover{
-    color: #FF79C6;
-    transition: all 0.05s;
-    transform: scale(1.3);
-}
-
 .menu{
     width: 100%;
     display: flex;
@@ -52,15 +46,24 @@
     justify-content: space-between;
 }
 
+.choice{
+    margin: 12px;
+}
+
+.choice:hover{
+    color: #FF79C6;
+    transition: all 0.05s;
+    transform: scale(1.3);
+}
+
 .flexbox{
     display: flex;
     flex-wrap: wrap;
     height: fit-content;
-    min-height: 88vh;
+    min-height: 83vh;
     justify-content: space-evenly;
     align-items: center;
 }
-
 .flexzone{
     display: flex;
     height: fit-content;
