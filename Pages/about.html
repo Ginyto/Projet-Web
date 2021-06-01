@@ -1,31 +1,79 @@
 <!DOCTYPE html>
-
 <html lang="fr">
 
 <head>
 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="/Css/Styles_t.css">
-    <link rel="appjs" href="/Js/App.js">
-
-    <title>Landing</title>
+    <title>Pomodoro</title>
+    <link rel="stylesheet" href="/Css/Styles_P.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 
 </head>
 
+<header class="ciel">
+    <h1 class="titre">Pomodoro</h1>
+    <nav class="menu">
+        <div class="choice" onclick="pathfinder(0)">Acceuil</div>
+        <div class="choice" onclick="pathfinder(1)">Flashcardo</div>
+        <div class="choice" onclick="pathfinder(2)">Création de deck</div>
+        <div class="choice" onclick="pathfinder(3)">Gestionnaire de Deck</div>
+        <div class="choice" onclick="pathfinder(4)">Pomodoro</div>
+        <div class="choice" onclick="pathfinder(5)">A propos</div>
+    </nav>
+</header>
 
 <body>
 
-    <div class="sources">
-        <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a
-                href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+    <div class="flexzone">
+
+        <div class="reloj">
+
+            <div class="h" id="h"></div>
+
+            <div class="m" id="m"></div>
+
+            <div class="s" id="s"></div>
+
+        </div>
+
+        <div class="pomodoro" id="pomo">
+            <div class="pp" id="pmin">00</div>
+            <div class="pp" id="dp">:</div>
+            <div class="pp" id="psec">00</div>
+        </div>
+
+        <div class="bouton_zone">
+
+            <button type="submit" class="boutons" id="pbtn" onclick="pomodoro()">
+                Pomodoro
+            </button>
+
+            <input type="text" id="tiempo" class="psaisie" placeholder="minutes" required="">
+        </div>
+
+        <div class="sources">
+            <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a
+                    href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+        </div>
+
+
     </div>
 
-
+    <script>
+        if (sessionStorage.getItem("min") != 0 && sessionStorage.getItem("sec") != 0) {
+            tempus = true;
+        }
+        else {
+            tempus = true;
+        }
+    </script>
+    <script src="/Js/App.js"></script>
 </body>
-
 
 
 </html>
