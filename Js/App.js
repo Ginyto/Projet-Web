@@ -136,33 +136,63 @@ function upload(params) {
         }
     }
 }
+
+function fillornotfill(params) {
+    console.log("name :"+document.getElementById("decknom").checkValidity());
+    console.log("terme :" + document.getElementById("terme").checkValidity());
+    console.log("def :" + document.getElementById("def").checkValidity());
+    console.log("-------------------------------------------------------");
+
+    if (
+			document.getElementById("decknom").checkValidity() == true &&
+			document.getElementById("terme").checkValidity() == true &&
+			document.getElementById("def").checkValidity() == true
+    ) {
+        console.log("return true");
+        return true;
+    }
+    else {
+        console.log("return false");
+        return false;
+    }
+
+}
+
 /**
  * Ajout de carte de maniere dynamique
  */
 function addcard() {
-    console.log(cmaindeck);
-
-    var carte = new Flash(terme.value, def.value, false, deckname.value);
-
-    deckname.style = "border: #282A36";
-    cmaindeck.children.item(1).textContent = carte.deck;
-    terme.value = "";
-    def.value = "";
-    num.textContent = "No." + (deck.length+ 2);
-    cmaindeck.children.item(2).textContent = deck.length + 1;
-    
-
-    if (selected) {
-        console.log("yeah")
-        memdeck[yugi].push(carte);
-        console.log(memdeck);
-        upload();
+    if (!fillornotfill()) {
+        window.confirm("Tu n'as remplie aucune carte !!");
     }
     else {
-        deck.push(carte);
+        deckname.readOnly = true;
+        console.log(cmaindeck);
+
+			var carte = new Flash(terme.value, def.value, false, deckname.value);
+
+			deckname.style = "border: #282A36";
+			cmaindeck.children.item(1).textContent = carte.deck;
+			terme.value = "";
+			def.value = "";
+			num.textContent = "No." + (deck.length + 2);
+			cmaindeck.children.item(2).textContent = deck.length + 1;
+
+			if (selected) {
+				console.log("yeah");
+				memdeck[yugi].push(carte);
+				console.log(memdeck);
+				upload();
+			} else {
+				deck.push(carte);
+			}
+
+			//console.log(yugi);
     }
 
-    //console.log(yugi);
+			
+			
+		
 }
 
 function delatecard(params) {
@@ -196,34 +226,43 @@ function delatecard(params) {
  * Création de deck dynamiquement
  */
 function creadeck() {
-    memdeck.push(deck);
-    deck = [];
+    //console.log(memdeck.length);
+    if (document.getElementById("decknom").checkValidity() == false) {
+        window.confirm("Tu n'as remplie aucun deck !!");
+    }
 
-    var newdeck = document.createElement("div");
-    console.log(memdeck.length);
-    nuevo(newdeck, "maindeck", memdeck.length);
-    nuevoclick(newdeck,"modescreen("+memdeck.length+")");
-    deckzone.appendChild(newdeck);
+    else {
+        deckname.readOnly = false;
+        memdeck.push(deck);
+        deck = [];
 
-    var no = document.createElement("div");
-    var nomdeck = document.createElement("div");
-    var countdeck = document.createElement("div");
+        var newdeck = document.createElement("div");
+        console.log(memdeck.length);
+        nuevo(newdeck, "maindeck", memdeck.length);
+        nuevoclick(newdeck,"modescreen("+memdeck.length+")");
+        deckzone.appendChild(newdeck);
 
-    nuevo(no, "infodeck", "no");
-    nuevo(nomdeck, "infodeck", "nom");
-    nuevo(countdeck, "infodeck", "nbr");
+        var no = document.createElement("div");
+        var nomdeck = document.createElement("div");
+        var countdeck = document.createElement("div");
 
-    nuevotext(no, "No." + (memdeck.length + 1));
-    nuevotext(nomdeck, "Nom du deck");
-    nuevotext(countdeck, "Nombres de cartes")
+        nuevo(no, "infodeck", "no");
+        nuevo(nomdeck, "infodeck", "nom");
+        nuevo(countdeck, "infodeck", "nbr");
 
-    newdeck.appendChild(no);
-    newdeck.appendChild(nomdeck);
-    newdeck.appendChild(countdeck);
+        nuevotext(no, "No." + (memdeck.length + 1));
+        nuevotext(nomdeck, "Nom du deck");
+        nuevotext(countdeck, "Nombres de cartes")
 
-    cmaindeck = document.getElementById(memdeck.length);
-    upload();
-    console.log(cmaindeck);
+        newdeck.appendChild(no);
+        newdeck.appendChild(nomdeck);
+        newdeck.appendChild(countdeck);
+
+        cmaindeck = document.getElementById(memdeck.length);
+        upload();
+        console.log(cmaindeck);
+    }
+    
 
 }
 

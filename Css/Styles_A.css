@@ -49,6 +49,13 @@
     flex-direction: column;
 }
 
+.flexform{
+    display: flex;
+    min-width: fit-content;
+    min-height: fit-content;
+    flex-direction: column;
+}
+
 .creadeck{
     display: flex;
     width: 500px;
@@ -89,6 +96,13 @@
     color: coral;
     font-size: 15px;
     background-color: #1b1d24;
+    background: #1b1d24;
+}
+
+
+
+#decknom{
+    font-size: 35px;
 }
 
 
@@ -317,3 +331,6 @@
     width: fit-content;
 }
 
+input:required {
+    border-bottom:coral 1px dashed;
+}

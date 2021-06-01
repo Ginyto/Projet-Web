@@ -56,38 +56,45 @@
 
         <div class="flexzone">
 
-            <form class="creadeck" id="set">
+            <form class="flexform">
                 
-                <input type="text" id="decknom" class="saisie" placeholder="écrivez le nom de votre deck" required="">
+                <div class="creadeck" id="set">
+                    <input type="textarea" id="decknom" class="saisie" placeholder="écrivez le nom de votre deck" required="">
+                    
+                    <h2 class="titulo">
+                        <p id="num">No.1</p>
+                        Question
+                    </h2>
+                    
+                    <input type="textarea" class="saisie" id="terme" placeholder="écrivez votre question" required="">
+                    
+                    <h2 class="titulo">Réponse</h2>
+                    
+                    <input type="textarea" class="saisie" id="def" placeholder="écrivez votre réponse" required="">
+                </div>
 
-                <h2 class="titulo"><p id="num">No.1</p>
-                    Question
-                </h2>
-                <input type="text" class="saisie" id="terme" placeholder="écrivez votre question" required="">
-                <h2 class="titulo">Réponse</h2>
-                <input type="text" class="saisie" id="def" placeholder="écrivez votre réponse" required="">
+                <div class="bouton_zone">
+                    <div class="add">
+                        <button type="submit" class="boutons" onclick="addcard()">
+                            Ajouter
+                        </button>
+                    </div>
+                
+                    <div class="add">
+                        <button type="submit" class="boutons" onclick="resetcreadeck()">
+                            Fin de Deck
+                        </button>
+                    </div>
+                
+                    <div class="switch">
+                        <button type="submit" class="boutons" onclick="pathfinder(3)">
+                            Decks
+                        </button>
+                    </div>
+                </div>
+
             </form>
 
-            <div class="bouton_zone">
-                <div class="add">
-                    <button type="submit" class="boutons" onclick="addcard()">
-                        Ajouter
-                    </button>
-                </div>
-
-                <div class="add">
-                    <button type="submit" class="boutons" onclick="resetcreadeck()">
-                        Fin de Deck
-                    </button>
-                </div>
-
-                <div class="switch">
-                    <button type="submit" class="boutons" onclick="pathfinder(3)">
-                        Decks
-                    </button>
-                </div>
-
-            </div>
 
         </div>
 
