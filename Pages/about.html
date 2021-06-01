@@ -28,48 +28,43 @@
 
 <body>
 
-    <div class="flexzone">
-
-        <div class="reloj">
-
-            <div class="h" id="h"></div>
-
-            <div class="m" id="m"></div>
-
-            <div class="s" id="s"></div>
-
+    <div class="flexbox">
+        
+        <div class="flexzone">
+        
+            <div class="reloj">
+        
+                <div class="h" id="h"></div>
+        
+                <div class="m" id="m"></div>
+        
+                <div class="s" id="s"></div>
+        
+            </div>
+        
+            <div class="pomodoro" id="pomo">
+                <div class="pp" id="pmin">00</div>
+                <div class="pp" id="dp">:</div>
+                <div class="pp" id="psec">00</div>
+            </div>
+        
+            <div class="bouton_zone">
+        
+                <button type="submit" class="boutons" id="pbtn" onclick="pomodoro()">
+                    Pomodoro
+                </button>
+        
+                <input type="text" id="tiempo" class="psaisie" placeholder="minutes" required="">
+            </div>
+        
+            <div class="sources">
+                <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a
+                        href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+            </div>
+        
+        
         </div>
-
-        <div class="pomodoro" id="pomo">
-            <div class="pp" id="pmin">00</div>
-            <div class="pp" id="dp">:</div>
-            <div class="pp" id="psec">00</div>
-        </div>
-
-        <div class="bouton_zone">
-
-            <button type="submit" class="boutons" id="pbtn" onclick="pomodoro()">
-                Pomodoro
-            </button>
-
-            <input type="text" id="tiempo" class="psaisie" placeholder="minutes" required="">
-        </div>
-
-        <div class="sources">
-            <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a
-                    href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
-        </div>
-
-
     </div>
-
-    <footer id="pied">
-        <div class="choice" id="apropo" onclick="pathfinder(5)">A propos</div>
-        <div class="credits">
-            <div>&#169; 2021 Tout droits réservés</div>
-            <div>Design by Annichiarico Gianlucca</div>
-        </div>
-    </footer>
 
     <script>
         if (sessionStorage.getItem("min") != 0 && sessionStorage.getItem("sec") != 0) {
@@ -81,6 +76,14 @@
     </script>
     <script src="/Js/App.js"></script>
 </body>
+
+<footer id="pied">
+    <div class="choice" id="apropo" onclick="pathfinder(5)">A propos</div>
+    <div class="credits">
+        <div>&#169; 2021 Tout droits réservés</div>
+        <div>Design by Annichiarico Gianlucca</div>
+    </div>
+</footer>
 
 
 </html>
