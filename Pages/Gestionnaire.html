@@ -28,61 +28,90 @@
 
 <body onload="download()">
 
-    <div class="flexzone">
-
-    <div class="deck_zone" id="deckzone">
-        <div class="maindeck" id="0" onclick="affichage()">
-            <div class="infodeck" id="nom">Nom du deck</div>
-            <div class="infodeck" id="nbr">Nombre de cartes</div>
-        </div>
-    </div>
-
-    <div class="flashcard_zone">
+    <div class="flexbox">
     
-        <div class="flashcard" onclick="flip()">
-            <div class="face" id="recto">
-                recto
+        <div class="rolex">
+            <div class="reloj">
+    
+    
+                <div class="h" id="h"></div>
+    
+    
+                <div class="m" id="m"></div>
+    
+    
+                <div class="s" id="s"></div>
+    
+    
             </div>
     
-    
-            <div class="face" id="verso">
-                verso
+            <div class="pomodoro" id="pomo">
+                <div class="pp" id="pmin">00</div>
+                <div class="pp" id="dp">:</div>
+                <div class="pp" id="psec">00</div>
             </div>
         </div>
-    
-    </div>
-    
-    <div class="bouton_zone">
-        <button type="submit" class="boutons" id="bone" onclick="precedent()">
-            Précédent
-        </button>
 
-        <button type="submit" class="boutons" id="bthree" onclick="suivant()">
-            Suivant
-        </button>
-    
-        <div class="switch">
-            <button type="submit" id="dcarte" class="boutons" onclick="delatecard()">
-                Supprimer la carte
-            </button>
+        <div class="flexzone">
+
+        <div class="deck_zone" id="deckzone">
+            <div class="maindeck" id="0" onclick="affichage()">
+                <div class="infodeck" id="nom">Nom du deck</div>
+                <div class="infodeck" id="nbr">Nombre de cartes</div>
+            </div>
         </div>
 
-        <div class="switch">
-            <button type="submit" id="dcarte" class="boutons" onclick="delatedeck()">
-                Supprimer le deck
-            </button>
+        <div class="flashcard_zone">
+        
+            <div class="flashcard" onclick="flip()">
+                <div class="face" id="recto">
+                    recto
+                </div>
+        
+        
+                <div class="face" id="verso">
+                    verso
+                </div>
+            </div>
+        
         </div>
-
-        <div class="switch">
-            <button type="submit" id="dcarte" class="boutons" onclick="localStorage.clear()+window.location.reload()">
-                Tout Supprimer
+        
+        <div class="bouton_zone">
+            <button type="submit" class="boutons" id="bone" onclick="precedent()">
+                Précédent
             </button>
-        </div>
 
+            <button type="submit" class="boutons" id="bthree" onclick="suivant()">
+                Suivant
+            </button>
+        
+            <div class="switch">
+                <button type="submit" id="dcarte" class="boutons" onclick="delatecard()">
+                    Supprimer la carte
+                </button>
+            </div>
+
+            <div class="switch">
+                <button type="submit" id="dcarte" class="boutons" onclick="delatedeck()">
+                    Supprimer le deck
+                </button>
+            </div>
+
+            <div class="switch">
+                <button type="submit" id="dcarte" class="boutons" onclick="localStorage.clear()+window.location.reload()">
+                    Tout Supprimer
+                </button>
+            </div>
+
+        </div>
+    
     </div>
 
     </div>
-    <script>screen = false</script>
+    <script>
+    screen = false;
+    tempus = false;
+    </script>
     <script src="/Js/App.js"></script>
 </body>
 
