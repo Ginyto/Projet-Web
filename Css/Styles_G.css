@@ -7,21 +7,43 @@
 }
 
 .ciel{
+    display: flex;
     color: #FF79C6;
     text-align: center;
-    border: #FF79C6 solid 1px;
+    justify-content: space-between;
+    flex-direction: column;
 }
 
-.menu{
+footer{
     display: flex;
-    justify-content: center;
-    justify-content: space-around;
-    color: coral;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    flex-wrap: wrap;
+    position: absolute;
+    width: 200px;
+    height: 20px;
+    bottom: 0;
+    margin-left: 50%;
+    margin-left: 50%;
+    color:#5a5a5d;
+    flex-direction: column;
+    align-items: center;
 }
 
+.credits{
+    display: flex;
+    width: 500px;
+    min-width: fit-content;
+    margin-right: 10px;
+}
+
+#apropo{
+    width: 400px;
+    text-align: center;
+    margin-right: 100px;
+}
+
+#apropo:hover{
+    color: coral;
+    transform: none;
+}
 .choice:hover{
     color: #FF79C6;
     transition: all 0.05s;
