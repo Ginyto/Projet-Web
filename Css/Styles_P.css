@@ -88,7 +88,7 @@
     width: 100px;
     height: 70px;
     color: coral;
-    background-color: #1b1d24;
+    background-color:#282A36;
     text-align: center;
 
     border: #282A36 4px solid;
@@ -201,13 +201,16 @@
 
 .pomodoro{
     display: flex;
+    justify-self: center;
+    align-self: center;
     font-size: 80px;
     padding: 30px;
     min-width: 90px;
     min-height: 100px;
+    width: fit-content;
     height: fit-content;
     border:#282A36 solid 4px;
-    background-color: #1b1d24;
+    background-color:#282A36;
     margin: 15px;
     color: coral;
     border-radius: 10%;
@@ -218,14 +221,14 @@
 }
 
 .pp{
-    background-color: #1b1d24;
+    background-color:#282A36;
     min-width: 270;
     min-height: 170;
     border-radius: 12%;
 }
 
 #tiempo{
-    background-color: #1b1d24;
+    background-color:#282A36;
     border-radius: 15%;
     max-width: 170px;
     max-height: 70px;
@@ -252,6 +255,15 @@
                 0 15px 15px rgba(0, 0, 0, 0.3),
                 inset 0 15px 15px rgba(0, 0, 0, 0.3);
     margin: 15px;
+}
+
+.tiempo{
+    display: flex;
+    flex-direction: column;
+    width: 360px;
+    height: 360px;
+    justify-content: space-between;
+    
 }
 
 
