@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Création de Cartes</title>
+    <link rel="stylesheet" href="/Css/Styles_A.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+</head>
+
+<header class="ciel">
+    <h1 class="titre">Création de Cartes</h1>
+    <nav class="menu">
+        <div class="choice" onclick="pathfinder(0)">Révisions</div>
+        <div class="choice" onclick="pathfinder(1)">Flashcardo</div>
+        <div class="choice" onclick="pathfinder(2)">Création de Cartes</div>
+        <div class="choice" onclick="pathfinder(3)">Gestionnaire de Deck</div>
+        <div class="choice" onclick="pathfinder(4)">Pomodoro</div>
+    </nav>
+</header>
+
+<body onload="download(true)">
+
+    <div class="flexbox">
+        
+        <div class="rolex">
+                <div class="reloj">
+                
+                
+                    <div class="h" id="h"></div>
+                
+                
+                    <div class="m" id="m"></div>
+                
+                
+                    <div class="s" id="s"></div>
+                
+                
+                </div>
+                
+                <div class="pomodoro" id="pomo">
+                    <div class="pp" id="pmin">00</div>
+                    <div class="pp" id="dp">:</div>
+                    <div class="pp" id="psec">00</div>
+                </div>
+        </div>
+
+        
+
+        <div class="flexzone">
+
+            <form class="flexform">
+                
+                <div class="creadeck" id="set">
+                    <input type="textarea" id="decknom" class="saisie" placeholder="écrivez le nom de votre deck" required="" maxlength="40">
+                    
+                    <h2 class="titulo">
+                        <p id="num">No.1</p>
+                        Question
+                    </h2>
+                    
+                    <input type="textarea" class="saisie" id="terme" placeholder="écrivez votre question" required="">
+                    
+                    <h2 class="titulo">Réponse</h2>
+                    
+                    <input type="textarea" class="saisie" id="def" placeholder="écrivez votre réponse" required="">
+                </div>
+
+                <div class="bouton_zone">
+                    <div class="add">
+                        <button type="submit" class="boutons" onclick="addcard()">
+                            Ajouter
+                        </button>
+                    </div>
+                
+                    <div class="add">
+                        <button type="submit" class="boutons" onclick="resetcreadeck()">
+                            Fin de Deck
+                        </button>
+                    </div>
+                
+                    <div class="switch">
+                        <button type="submit" class="boutons" onclick="pathfinder(3)">
+                            Decks
+                        </button>
+                    </div>
+                </div>
+
+            </form>
+
+
+        </div>
+
+        <div class="deck_zone" id="deckzone">
+            <div class="maindeck" id="0" onclick="modescreen(0)">
+                <div class="infodeck" id="no">No.1</div>
+                <div class="infodeck" id="nom">Nom du deck</div>
+                <div class="infodeck" id="nbr">Nombre de cartes</div>
+            </div>
+        </div>
+        
+    </div>
+
+    <script>
+        screen = true;
+        tempus = false;
+    </script>
+    <script src="/Js/App.js"></script>
+</body>
+
+<footer id="pied">
+    <div class="choice" id="apropo" onclick="pathfinder(5)">A propos</div>
+    <div class="credits">
+        <div>&#169; 2021 Tout droits réservés</div>
+        <div>Design by Annichiarico Gianlucca</div>
+    </div>
+</footer>
+
+
+</html>
