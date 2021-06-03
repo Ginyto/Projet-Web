@@ -26,8 +26,6 @@ duel = 666;
 selected = false;
 battle = 1;
 
-ingame = true;
-
 
 
 
@@ -400,23 +398,24 @@ function loadingdeck(x, nom, nbr) {
 
 
 function modescreen(params) {
-    if (ingame) {
-        yugi = params;
-        yo = 0;
-        duel = params;
-        selected = true;
+    yugi = params;
+    yo = 0;
+    duel = params;
+    selected = true;
 
         //console.log(memdeck[params]);
         //console.log(yugi);
-        //console.log(screen);
+    console.log(screen);
 
-        if (!screen) {
-            flop();
-            affichage(yugi, yo);
-        }
-        if (screen) {
-            splash();
-        }
+    if (screen == false) {
+        flop();
+        affichage(yugi, yo);
+        console.log("test");
+    }
+    
+    if (screen == true) {
+        splash();
+        console.log("Gait chier putain");
     }
 }
 
