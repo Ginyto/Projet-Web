@@ -65,6 +65,7 @@ function counter() {
 }
 
 function flip() {
+    //console.log("oui");
     if (selected && battle!= 666) {
         flashcard.style = "transition: all 1s ease;";
         flashcard.style.transform = "rotateY(180deg)";
