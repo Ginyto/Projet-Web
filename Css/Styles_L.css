@@ -19,9 +19,10 @@
     height: 500px;
     transform-style: preserve-3d;
     transition: all 1s ease;
-    margin: 15px;
+    margin-left: 60px;
+    margin-right: 60px;
+    margin-top: 15px;
 }
-
 
 .flashcard:hover{
     transform: rotateY(180deg);
@@ -102,7 +103,7 @@
 }
 
 .sublime:hover{
-    color: coral;
+    color:cyan;
 }
 
 .ciel{
